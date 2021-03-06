@@ -1,4 +1,4 @@
-# Tatto manager backend
+# Tattoo manager backend
 
 Installing requirements
 ````bash
