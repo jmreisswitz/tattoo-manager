@@ -1,6 +1,11 @@
-# Django
+# Tatto manager backend
 
-## Useful Commands
+Installing requirements
+````bash
+$ pip3 install -r requirements.txt
+````
+
+## Django Useful Commands
 
 Start the server
 ````bash
@@ -22,3 +27,7 @@ Create migrations
 $ python3 manage.py makemigrations <app>
 ````
 
+Create admin user (needs to migrate for the first time)
+````bash
+$ python3 manage.py createsuperuser
+````
