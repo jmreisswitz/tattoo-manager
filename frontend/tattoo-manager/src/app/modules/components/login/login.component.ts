@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
   constructor() {}
 
   userLogin = this.getEmptyUserLogin();
+  hide = true;
 
   getEmptyUserLogin(): UserLogin {
     return new UserLogin('', '');

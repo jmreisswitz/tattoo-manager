@@ -2,9 +2,10 @@
   <h2>Bem-Vindo!</h2>
   <form (ngSubmit)="onSubmit()">
     <!--    USER FIELD    -->
-    <div class="form-group">
-      <label for="username"> Usuário </label>
+    <mat-form-field>
+      <mat-label> Usuário </mat-label>
       <input
+        matInput
         type="text"
         class="form-control"
         id="username"
@@ -12,11 +13,14 @@
         required
         [(ngModel)]="userLogin.username"
       />
-    </div>
+    </mat-form-field>
     <!--    PASSWORD FIELD    -->
-    <div class="form-group">
-      <label for="password"> Password </label>
+    <mat-form-field>
+      <mat-label> Password </mat-label>
       <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        matInput
         type="password"
         class="form-control"
         id="password"
@@ -24,8 +28,17 @@
         required
         [(ngModel)]="userLogin.password"
       />
-    </div>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
     <!--    SUBMIT BUTTON    -->
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button mat-flat-button color="primary">Submit</button>
   </form>
 </div>
