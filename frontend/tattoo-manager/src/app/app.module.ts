@@ -9,9 +9,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { BudgetDashboardComponent } from './modules/components/budget-dashboard/budget-dashboard.component';
+import { CalendarDashboardComponent } from './modules/components/calendar-dashboard/calendar-dashboard.component';
+import { DefaultDashboardComponent } from './modules/components/default-dashboard/default-dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent],
+  declarations: [AppComponent, MainPageComponent, BudgetDashboardComponent, CalendarDashboardComponent, DefaultDashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
