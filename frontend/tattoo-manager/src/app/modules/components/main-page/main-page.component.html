@@ -15,12 +15,14 @@
     (mouseleave)="mouseLeave()"
   >
     <mat-nav-list *ngFor="let sideNavOption of sideNavOptionList">
-      <mat-list-item>
-        <mat-icon mat-list-icon>{{ sideNavOption.icon }}</mat-icon>
-        <span class="full-width" *ngIf="isExpanded || isShowing">{{
-          sideNavOption.text
-        }}</span>
-      </mat-list-item>
+      <a routerLink="/{{ sideNavOption.componentPath }}">
+        <mat-list-item>
+          <mat-icon mat-list-icon>{{ sideNavOption.icon }}</mat-icon>
+          <span class="full-width" *ngIf="isExpanded || isShowing">{{
+            sideNavOption.text
+          }}</span>
+        </mat-list-item>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 

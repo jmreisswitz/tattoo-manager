@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 interface SideNavOption {
   icon: string;
   text: string;
+  componentPath: string;
 }
 
 @Component({
@@ -18,9 +19,13 @@ export class MainPageComponent implements OnInit {
   isShowing = false;
 
   sideNavOptionList: SideNavOption[] = [
-    { icon: 'home', text: 'Página inicial' },
-    { icon: 'shopping_cart', text: 'Pedidos de orçamento' },
-    { icon: 'calendar_today', text: 'Agenda' },
+    { icon: 'home', text: 'Página inicial', componentPath: '' },
+    {
+      icon: 'shopping_cart',
+      text: 'Pedidos de orçamento',
+      componentPath: 'budget',
+    },
+    { icon: 'calendar_today', text: 'Agenda', componentPath: 'calendar' },
   ];
 
   mouseEnter(): void {
