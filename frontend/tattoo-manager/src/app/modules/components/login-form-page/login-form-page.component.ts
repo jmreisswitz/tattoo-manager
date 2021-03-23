@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BudgetRequestService } from '../../../core/service/budget-request.service';
 import { BudgetRequest } from '../../../core/model/budget-request';
 
 @Component({
@@ -8,12 +9,15 @@ import { BudgetRequest } from '../../../core/model/budget-request';
   styleUrls: ['./login-form-page.component.css'],
 })
 export class LoginFormPageComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private budgeRequestService: BudgetRequestService
+  ) {
     this.userid = '';
   }
 
   userid: string | null;
-  budgetRequest = {
+  budgetRequest: BudgetRequest = {
     username: '',
     birth: '',
   };
@@ -30,7 +34,7 @@ export class LoginFormPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.budgetRequest);
+    this.budgeRequestService.sendBudgetRequest(this.budgetRequest);
     this.cleanRequest();
   }
 }
