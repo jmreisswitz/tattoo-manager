@@ -1,2 +1,33 @@
-<p>login-form-page works!</p>
-<p>{{ userid }}</p>
+<div class="container">
+  <h2>Bem-vindo!</h2>
+  <form>
+    <!--    NAME FIELD-->
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="clientname"
+        name="clientname"
+        required
+        [(ngModel)]="budgetRequest.username"
+      />
+    </mat-form-field>
+    <!--    BIRTH FIELD-->
+    <!--    TODO use date instead of string-->
+    <mat-form-field>
+      <mat-label>Data de nascimento</mat-label>
+      <input
+        matInput
+        type="text"
+        class="form-control"
+        id="birthdate"
+        name="birthdate"
+        required
+        [(ngModel)]="budgetRequest.birth"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-flat-button color="primary" (click)="onSubmit()">Enviar</button>
+</div>
