@@ -12,9 +12,10 @@ import { MatListModule } from '@angular/material/list';
 import { BudgetDashboardComponent } from './modules/components/budget-dashboard/budget-dashboard.component';
 import { CalendarDashboardComponent } from './modules/components/calendar-dashboard/calendar-dashboard.component';
 import { DefaultDashboardComponent } from './modules/components/default-dashboard/default-dashboard.component';
+import { LoginFormPageComponent } from './modules/components/login-form-page/login-form-page.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, BudgetDashboardComponent, CalendarDashboardComponent, DefaultDashboardComponent],
+  declarations: [AppComponent, MainPageComponent, BudgetDashboardComponent, CalendarDashboardComponent, DefaultDashboardComponent, LoginFormPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
