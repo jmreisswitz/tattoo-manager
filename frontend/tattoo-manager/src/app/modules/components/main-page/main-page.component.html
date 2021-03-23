@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <!--  TODO  Fix Menu icon to have same background as the rest -->
+  <button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1>Tattoo Manager</h1>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav
+    #sidenav
+    class="main-sidenav"
+    mode="side"
+    opened="true"
+    (mouseenter)="mouseEnter()"
+    (mouseleave)="mouseLeave()"
+  >
+    <mat-nav-list *ngFor="let sideNavOption of sideNavOptionList">
+      <a routerLink="/{{ sideNavOption.componentPath }}">
+        <mat-list-item>
+          <mat-icon mat-list-icon>{{ sideNavOption.icon }}</mat-icon>
+          <span class="full-width" *ngIf="isExpanded || isShowing">{{
+            sideNavOption.text
+          }}</span>
+        </mat-list-item>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="main-page-content"><router-outlet></router-outlet></div>
+</mat-sidenav-container>
