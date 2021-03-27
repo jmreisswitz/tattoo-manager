@@ -4,11 +4,11 @@ import { BudgetRequestService } from '../../../core/service/budget-request.servi
 import { BudgetRequest } from '../../../core/model/budget-request';
 
 @Component({
-  selector: 'app-login-form-page',
-  templateUrl: './login-form-page.component.html',
-  styleUrls: ['./login-form-page.component.css'],
+  selector: 'app-budget-request',
+  templateUrl: './budget-request.component.html',
+  styleUrls: ['./budget-request.component.css'],
 })
-export class LoginFormPageComponent implements OnInit {
+export class BudgetRequestComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private budgeRequestService: BudgetRequestService

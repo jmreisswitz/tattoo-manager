@@ -12,11 +12,11 @@ import { MatListModule } from '@angular/material/list';
 import { BudgetDashboardComponent } from './modules/components/budget-dashboard/budget-dashboard.component';
 import { CalendarDashboardComponent } from './modules/components/calendar-dashboard/calendar-dashboard.component';
 import { DefaultDashboardComponent } from './modules/components/default-dashboard/default-dashboard.component';
-import { LoginFormPageComponent } from './modules/components/login-form-page/login-form-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     BudgetDashboardComponent,
     CalendarDashboardComponent,
     DefaultDashboardComponent,
-    LoginFormPageComponent,
+    BudgetRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule,
+    MatToolbarModule,x
     MatListModule,
     MatFormFieldModule,
     MatInputModule,

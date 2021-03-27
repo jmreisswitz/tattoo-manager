@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginFormPageComponent } from './login-form-page.component';
+import { BudgetRequestComponent } from './budget-request.component';
 
-describe('LoginFormPageComponent', () => {
-  let component: LoginFormPageComponent;
-  let fixture: ComponentFixture<LoginFormPageComponent>;
+describe('BudgetRequestComponent', () => {
+  let component: BudgetRequestComponent;
+  let fixture: ComponentFixture<BudgetRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginFormPageComponent ]
+      declarations: [ BudgetRequestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginFormPageComponent);
+    fixture = TestBed.createComponent(BudgetRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
