@@ -33,7 +33,7 @@ import { BudgetRequestComponent } from './modules/components/budget-request/budg
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule,x
+    MatToolbarModule,
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
