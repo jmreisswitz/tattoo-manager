@@ -1,33 +1,98 @@
-<div class="container">
+<div>
   <h2>Bem-vindo!</h2>
   <form>
     <!--    NAME FIELD-->
-    <mat-form-field>
-      <mat-label>Nome</mat-label>
-      <input
-        matInput
-        type="text"
-        class="form-control"
-        id="clientname"
-        name="clientname"
-        required
-        [(ngModel)]="budgetRequest.clientName"
-      />
-    </mat-form-field>
+    <section>
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="clientName"
+          name="clientName"
+          required
+          [(ngModel)]="budgetRequest.clientName"
+        />
+      </mat-form-field>
+    </section>
     <!--    BIRTH FIELD-->
-    <!--    TODO use date instead of string-->
-    <mat-form-field>
-      <mat-label>Data de nascimento</mat-label>
-      <input
-        matInput
-        type="text"
-        class="form-control"
-        id="birthdate"
-        name="birthdate"
-        required
-        [(ngModel)]="budgetRequest.birth"
-      />
-    </mat-form-field>
+    <section>
+      <mat-form-field>
+        <mat-label>Data de nascimento</mat-label>
+        <input
+          matInput
+          type="date"
+          class="form-control"
+          id="birthdate"
+          name="birthdate"
+          required
+          [(ngModel)]="budgetRequest.birth"
+        />
+      </mat-form-field>
+    </section>
+    <!--    DESCRIPTION FIELD-->
+    <section>
+      <mat-form-field>
+        <mat-label>Descrição</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="description"
+          name="description"
+          required
+          [(ngModel)]="budgetRequest.description"
+        />
+      </mat-form-field>
+    </section>
+    <!--    BODY PARTY FIELD-->
+    <section>
+      <mat-form-field>
+        <mat-label>Parte do corpo</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="bodyPart"
+          name="bodyPart"
+          required
+          [(ngModel)]="budgetRequest.bodyPart"
+        />
+      </mat-form-field>
+    </section>
+    <!--    ART SIZE FIELD-->
+    <section>
+      <mat-form-field>
+        <mat-label>Tamanho da tatuagem em cm</mat-label>
+        <input
+          matInput
+          type="number"
+          class="form-control"
+          id="sizeInCm"
+          name="sizeInCm"
+          required="required"
+          [(ngModel)]="budgetRequest.sizeInCm"
+        />
+      </mat-form-field>
+    </section>
+    <!--    ART SIZE FIELD-->
+    <section>
+      <mat-form-field>
+        <mat-label>Seu Telefone de contato</mat-label>
+        <input
+          matInput
+          type="tel"
+          placeholder="(51) 99999-9999"
+          class="form-control"
+          id="phone"
+          name="phone"
+          required
+          [(ngModel)]="budgetRequest.phone"
+        />
+      </mat-form-field>
+    </section>
   </form>
+
   <button mat-flat-button color="primary" (click)="onSubmit()">Enviar</button>
 </div>
