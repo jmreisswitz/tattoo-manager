@@ -12,25 +12,29 @@ export class BudgetRequestComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private budgeRequestService: BudgetRequestService
-  ) {
-    this.userid = '';
-  }
+  ) {}
 
-  userid: string | null;
-  budgetRequest: BudgetRequest = {
-    username: '',
-    birth: '',
-  };
+  userAlias: string | null = '';
+
+  budgetRequest: BudgetRequest = new BudgetRequest('', '', '', '', 0.0, '');
 
   ngOnInit(): void {
-    this.userid = this.route.snapshot.paramMap.get('userid');
+    this.userAlias = this.route.snapshot.paramMap.get('userid');
+    if (this.userAlias != null) {
+      this.budgetRequest.setUserAlias(this.userAlias);
+    }
   }
 
   cleanRequest(): void {
-    this.budgetRequest = {
-      username: '',
-      birth: '',
-    };
+    this.budgetRequest = new BudgetRequest(
+      '',
+      '',
+      '',
+      '',
+      0.0,
+      '',
+      this.userAlias
+    );
   }
 
   onSubmit(): void {
