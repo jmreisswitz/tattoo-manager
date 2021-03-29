@@ -21,7 +21,8 @@ export class BudgetRequestService {
       ':' +
       environment.backend.port +
       '/' +
-      this.serverRoute;
+      this.serverRoute +
+      '/';
   }
 
   sendBudgetRequest(request: BudgetRequest): void {
