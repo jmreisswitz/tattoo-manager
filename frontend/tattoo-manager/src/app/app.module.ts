@@ -12,9 +12,22 @@ import { MatListModule } from '@angular/material/list';
 import { BudgetDashboardComponent } from './modules/components/budget-dashboard/budget-dashboard.component';
 import { CalendarDashboardComponent } from './modules/components/calendar-dashboard/calendar-dashboard.component';
 import { DefaultDashboardComponent } from './modules/components/default-dashboard/default-dashboard.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, BudgetDashboardComponent, CalendarDashboardComponent, DefaultDashboardComponent],
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    BudgetDashboardComponent,
+    CalendarDashboardComponent,
+    DefaultDashboardComponent,
+    BudgetRequestComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +36,11 @@ import { DefaultDashboardComponent } from './modules/components/default-dashboar
     MatIconModule,
     MatToolbarModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
