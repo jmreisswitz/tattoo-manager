@@ -29,10 +29,16 @@ def new_budget_request(request):
 
 
 @api_view(["GET"])
-def get_all_from_user_alias(request):
+def get_all_from_user_alias(request, user_alias):
     try:
-        user_alias = request.data["userAlias"]
-        return BudgetRequest.objects.filter(user_alias=user_alias).all()
+        budget_requests = BudgetRequest.objects.filter(user_alias=user_alias).all()
+        return JsonResponse(
+            {
+                "budgetRequests": [
+                    budget_request.to_dict() for budget_request in budget_requests
+                ]
+            }
+        )
     except KeyError:
         return JsonResponse(
             {"message": "userAlias missing in body"}, status=HTTPStatus.BAD_REQUEST
