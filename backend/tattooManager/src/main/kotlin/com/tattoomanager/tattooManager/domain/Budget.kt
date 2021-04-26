@@ -7,5 +7,6 @@ data class Budget(
     val bodyPart: String,
     val sizeInCm: Float,
     val phone: String,
-    val userAlias: String
+    val userAlias: String,
+    var userId: Long?
 )
