@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.4.32"
 	kotlin("plugin.spring") version "1.4.32"
 	kotlin("plugin.jpa") version "1.4.32"
+	kotlin("plugin.serialization") version "1.4.32"
 }
 
 group = "com.tattoomanager"
@@ -24,6 +25,7 @@ repositories {
 
 dependencies {
 	api("org.modelmapper:modelmapper:2.3.0")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
