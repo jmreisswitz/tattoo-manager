@@ -1,25 +1,24 @@
 package com.tattoomanager.tattooManager.adapter.persistence.repository
 
-import com.tattoomanager.tattooManager.adapter.persistence.entity.UserEntity
+import com.tattoomanager.tattooManager.adapter.persistence.mapper.UserEntityMapper
 import com.tattoomanager.tattooManager.domain.User
 import com.tattoomanager.tattooManager.port.repository.UserRepository
-import org.modelmapper.ModelMapper
 import java.util.*
 
 class UserRepositoryImpl constructor(
     private val userPsqlRepository: UserPsqlRepository
     ): UserRepository {
-    private val modelMapper = ModelMapper()
+    private val modelMapper = UserEntityMapper()
 
     override fun save(user: User): User {
-        val userEntity = userPsqlRepository.save(modelMapper.map(user, UserEntity::class.java))
-        return modelMapper.map(userEntity, User::class.java)
+        val userEntity = userPsqlRepository.save(modelMapper.mapToEntity(user))
+        return modelMapper.mapToDomain(userEntity)
     }
 
     override fun findByUserAlias(userAlias: String): Optional<User> {
         val userEntity = userPsqlRepository.findByUserAlias(userAlias).orElse(null)
         if (userEntity != null){
-            Optional.of(modelMapper.map(userEntity, User::class.java))
+            Optional.of(modelMapper.mapToDomain(userEntity))
         }
         return Optional.empty()
     }

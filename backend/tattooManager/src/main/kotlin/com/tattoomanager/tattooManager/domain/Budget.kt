@@ -1,6 +1,7 @@
 package com.tattoomanager.tattooManager.domain
 
 data class Budget(
+    val id: Long?,
     val clientName: String,
     val age: Int,
     val description: String,

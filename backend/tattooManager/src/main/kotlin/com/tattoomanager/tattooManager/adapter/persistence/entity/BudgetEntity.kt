@@ -9,8 +9,8 @@ import javax.persistence.Table
 @Table(name = "budget")
 data class BudgetEntity(
     @Id @GeneratedValue
-    val id:Long=-1,
-    val userId: Long=-1,
+    val id:Long?=null,
+    val userId: Long? =-1,
     val clientName: String="",
     val age: Int=0,
     val description: String="",
