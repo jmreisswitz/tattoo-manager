@@ -1,14 +1,11 @@
 package com.tattoomanager.tattooManager.adapter.persistence.entity
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_entity")
 data class UserEntity(
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long=-1,
     val name: String="",
     val userAlias: String=""

@@ -10,6 +10,6 @@ class FindBudgetsByUserAlias constructor(
 ) {
     fun execute(userAlias: String): List<Budget> {
         val user = this.findUserByUserAlias.execute(userAlias)
-        return this.budgetRepository.findByUserId(user.id)
+        return this.budgetRepository.findByUserId(user.id!!)
     }
 }
