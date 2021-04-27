@@ -1,4 +1,11 @@
-package com.tattoomanager.tattooManager.adapter.persistence
+package com.tattoomanager.tattooManager.adapter.persistence.repository
 
-class BudgetPsqlRepository {
+import com.tattoomanager.tattooManager.adapter.persistence.entity.BudgetEntity
+import org.springframework.data.repository.CrudRepository
+import org.springframework.stereotype.Repository
+
+@Repository
+interface BudgetPsqlRepository: CrudRepository<BudgetEntity, Long> {
+    fun save(budget: BudgetEntity): BudgetEntity
+    fun findByUserId(userId: Long): List<BudgetEntity>
 }
