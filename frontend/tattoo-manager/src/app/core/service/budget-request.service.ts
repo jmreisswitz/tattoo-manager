@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ErrorHandlingService } from './error-handling.service';
 import { catchError } from 'rxjs/operators';
+import { Observable, pipe } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +33,13 @@ export class BudgetRequestService {
       .post<BudgetRequest>(this.url, request)
       .pipe(catchError(this.errorHandler.handleError('sendBudgetRequest', [])))
       .subscribe();
+  }
 
-    console.log('Sent!');
+  getBudgetRequests(userAliasRequest: string): Observable<BudgetRequest[]> {
+    return this.http
+      .get<BudgetRequest[]>(this.url, {
+        params: { userAlias: userAliasRequest },
+      })
+      .pipe(catchError(this.errorHandler.handleError('getBudgetRequest', [])));
   }
 }
