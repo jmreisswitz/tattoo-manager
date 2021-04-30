@@ -1,7 +1,7 @@
 
 CREATE TABLE budget(
     id serial primary key,
-    user_id text,
+    user_id integer,
     client_name text,
     age integer,
     description text,
