@@ -1,6 +1,6 @@
 export interface IBudgetRequest {
   clientName: string;
-  birth: string;
+  age: number;
   description: string;
   bodyPart: string;
   sizeInCm: number;
@@ -10,7 +10,7 @@ export interface IBudgetRequest {
 
 export class BudgetRequest implements IBudgetRequest {
   clientName: string;
-  birth: string;
+  age: number;
   description: string;
   bodyPart: string;
   sizeInCm: number;
@@ -19,7 +19,7 @@ export class BudgetRequest implements IBudgetRequest {
 
   constructor(
     clientName: string,
-    birth: string,
+    age: number,
     description: string,
     bodyPart: string,
     sizeInCm: number,
@@ -27,7 +27,7 @@ export class BudgetRequest implements IBudgetRequest {
     userAlias?: string | null
   ) {
     this.clientName = clientName;
-    this.birth = birth;
+    this.age = age;
     this.description = description;
     this.bodyPart = bodyPart;
     this.sizeInCm = sizeInCm;

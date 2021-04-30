@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class BudgetRequestService {
   url: string;
-  serverRoute = 'budget-request';
+  serverRoute = 'budget';
 
   constructor(
     private http: HttpClient,

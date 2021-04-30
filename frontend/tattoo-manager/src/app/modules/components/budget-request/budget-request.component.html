@@ -19,15 +19,15 @@
     <!--    BIRTH FIELD-->
     <section>
       <mat-form-field>
-        <mat-label>Data de nascimento</mat-label>
+        <mat-label>Idade</mat-label>
         <input
           matInput
-          type="date"
+          type="number"
           class="form-control"
           id="birthdate"
           name="birthdate"
           required
-          [(ngModel)]="budgetRequest.birth"
+          [(ngModel)]="budgetRequest.age"
         />
       </mat-form-field>
     </section>

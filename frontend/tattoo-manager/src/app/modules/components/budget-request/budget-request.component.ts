@@ -16,7 +16,7 @@ export class BudgetRequestComponent implements OnInit {
 
   userAlias: string | null = '';
 
-  budgetRequest: BudgetRequest = new BudgetRequest('', '', '', '', 0.0, '');
+  budgetRequest: BudgetRequest = new BudgetRequest('', 0, '', '', 0.0, '');
 
   ngOnInit(): void {
     this.userAlias = this.route.snapshot.paramMap.get('userid');
@@ -28,7 +28,7 @@ export class BudgetRequestComponent implements OnInit {
   cleanRequest(): void {
     this.budgetRequest = new BudgetRequest(
       '',
-      '',
+      0,
       '',
       '',
       0.0,
