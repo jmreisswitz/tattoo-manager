@@ -18,7 +18,7 @@ class UserRepositoryImpl constructor(
     override fun findByUserAlias(userAlias: String): Optional<User> {
         val userEntity = userPsqlRepository.findByUserAlias(userAlias).orElse(null)
         if (userEntity != null){
-            Optional.of(modelMapper.mapToDomain(userEntity))
+            return Optional.of(modelMapper.mapToDomain(userEntity))
         }
         return Optional.empty()
     }

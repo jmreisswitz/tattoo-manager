@@ -1,14 +1,11 @@
 package com.tattoomanager.tattooManager.adapter.persistence.entity
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "budget")
 data class BudgetEntity(
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id:Long?=null,
     val userId: Long? =-1,
     val clientName: String="",

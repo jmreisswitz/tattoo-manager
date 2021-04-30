@@ -1,12 +1,12 @@
 
 CREATE TABLE budget(
     id serial primary key,
-    userId text,
+    user_id text,
     client_name text,
     age integer,
     description text,
-    bodyPart text,
-    sizeInCm float,
+    body_part text,
+    size_in_cm float,
     phone text,
-    userAlias text
+    user_alias text
 )
