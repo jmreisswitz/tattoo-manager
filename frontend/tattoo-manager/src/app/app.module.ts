@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarDashboardComponent,
     DefaultDashboardComponent,
     BudgetRequestComponent,
+    BudgetDetailComponent,
   ],
   imports: [
     BrowserModule,

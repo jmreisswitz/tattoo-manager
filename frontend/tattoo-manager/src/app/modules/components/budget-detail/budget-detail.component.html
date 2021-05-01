@@ -1,0 +1,6 @@
+<div *ngIf="budget">
+  <p>Nome do cliente: {{ budget.clientName }}</p>
+  <p>Descrição: {{ budget.description }}</p>
+  <p>Telefone de contato: {{ budget.phone }}</p>
+</div>
+<div *ngIf="!budget">There is no budget to be displayed</div>

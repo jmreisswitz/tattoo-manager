@@ -1,4 +1,3 @@
-<p>budget-dashboard works or no!</p>
-<ul *ngFor="let budget of budgetList">
-  <li>{{ budget }}</li>
-</ul>
+<div *ngFor="let budget of budgetList">
+  <app-budget-detail [budget]="budget"></app-budget-detail>
+</div>
