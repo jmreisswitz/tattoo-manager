@@ -1,6 +1,10 @@
-<div *ngIf="budget" class="card">
-  <p>Nome do cliente: {{ budget.clientName }}</p>
-  <p>Descrição: {{ budget.description }}</p>
-  <p>Telefone de contato: {{ budget.phone }}</p>
-</div>
-<div *ngIf="!budget">There is no budget to be displayed</div>
+<mat-card *ngIf="budget">
+  <mat-card-title>Nome do cliente: {{ budget.clientName }}</mat-card-title>
+  <mat-card-content>
+    <p>Descrição: {{ budget.description }}</p>
+    <p>Telefone de contato: {{ budget.phone }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary">Marcar como lida</button>
+  </mat-card-actions>
+</mat-card>

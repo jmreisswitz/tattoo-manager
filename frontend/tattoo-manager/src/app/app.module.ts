@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BudgetDetailComponent } from './modules/components/budget-detail/budget
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatCardModule,
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
