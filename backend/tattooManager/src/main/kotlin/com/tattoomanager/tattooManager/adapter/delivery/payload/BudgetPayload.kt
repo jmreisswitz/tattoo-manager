@@ -12,5 +12,7 @@ data class BudgetPayload (
     val sizeInCm: Float,
     val phone: String,
     val userAlias: String,
-    var userId: Long?=null
+    val isNew: Boolean,
+    var userId: Long?=null,
+    val creationDate: String
 )

@@ -4,5 +4,5 @@ import com.tattoomanager.tattooManager.domain.Budget
 
 interface BudgetRepository {
     fun save(budget: Budget): Budget
-    fun findByUserId(userId: Long): List<Budget>
+    fun findByUserIdOrderedByCreationDate(userId: Long): List<Budget>
 }

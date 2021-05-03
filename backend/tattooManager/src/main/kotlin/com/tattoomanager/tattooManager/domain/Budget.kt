@@ -9,5 +9,7 @@ data class Budget(
     val sizeInCm: Float,
     val phone: String,
     val userAlias: String,
-    var userId: Long?
+    val isNew: Boolean,
+    var userId: Long?,
+    val creationDate: String
 )

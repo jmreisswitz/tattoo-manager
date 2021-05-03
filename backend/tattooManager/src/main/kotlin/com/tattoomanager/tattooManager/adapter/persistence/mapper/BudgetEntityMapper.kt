@@ -15,7 +15,9 @@ class BudgetEntityMapper {
             budget.bodyPart,
             budget.sizeInCm,
             budget.phone,
-            budget.userAlias
+            budget.isNew,
+            budget.userAlias,
+            budget.creationDate
         )
     }
 
@@ -29,7 +31,9 @@ class BudgetEntityMapper {
             budgetEntity.sizeInCm,
             budgetEntity.phone,
             budgetEntity.userAlias,
-            budgetEntity.userId
+            budgetEntity.isNew,
+            budgetEntity.userId,
+            budgetEntity.creationDate
         )
     }
 }

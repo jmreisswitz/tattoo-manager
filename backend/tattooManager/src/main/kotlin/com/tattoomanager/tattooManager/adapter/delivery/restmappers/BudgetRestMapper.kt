@@ -14,7 +14,9 @@ class BudgetRestMapper {
             budgetPayload.sizeInCm,
             budgetPayload.phone,
             budgetPayload.userAlias,
-            budgetPayload.userId
+            budgetPayload.isNew,
+            budgetPayload.userId,
+            budgetPayload.creationDate
         )
     }
 
@@ -28,7 +30,9 @@ class BudgetRestMapper {
             budget.sizeInCm,
             budget.phone,
             budget.userAlias,
-            budget.userId
+            budget.isNew,
+            budget.userId,
+            budget.creationDate
         )
     }
 }

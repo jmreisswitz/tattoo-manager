@@ -19,8 +19,8 @@ class BudgetRepositoryImpl constructor(
         return modelMapper.mapToDomain(budgetEntity)
     }
 
-    override fun findByUserId(userId: Long): List<Budget> {
-        return mapEntityListToDomain(budgetPsqlRepository.findByUserId(userId))
+    override fun findByUserIdOrderedByCreationDate(userId: Long): List<Budget> {
+        return mapEntityListToDomain(budgetPsqlRepository.findByUserIdOrderByCreationDate(userId))
     }
 }
 

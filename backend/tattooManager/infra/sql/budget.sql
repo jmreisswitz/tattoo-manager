@@ -8,5 +8,7 @@ CREATE TABLE budget(
     body_part text,
     size_in_cm float,
     phone text,
-    user_alias text
+    user_alias text,
+    is_new boolean,
+    creation_date timestamp
 )
