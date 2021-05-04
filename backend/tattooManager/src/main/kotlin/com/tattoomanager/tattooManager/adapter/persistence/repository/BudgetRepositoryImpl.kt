@@ -23,5 +23,3 @@ class BudgetRepositoryImpl constructor(
         return mapEntityListToDomain(budgetPsqlRepository.findByUserIdOrderByCreationDate(userId))
     }
 }
-
-

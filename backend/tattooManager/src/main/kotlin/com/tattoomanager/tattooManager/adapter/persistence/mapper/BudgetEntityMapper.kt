@@ -2,6 +2,7 @@ package com.tattoomanager.tattooManager.adapter.persistence.mapper
 
 import com.tattoomanager.tattooManager.adapter.persistence.entity.BudgetEntity
 import com.tattoomanager.tattooManager.domain.Budget
+import java.sql.Timestamp
 
 class BudgetEntityMapper {
 
@@ -17,7 +18,7 @@ class BudgetEntityMapper {
             budget.phone,
             budget.isNew,
             budget.userAlias,
-            budget.creationDate
+            Timestamp.valueOf(budget.creationDate)
         )
     }
 
@@ -33,7 +34,7 @@ class BudgetEntityMapper {
             budgetEntity.userAlias,
             budgetEntity.isNew,
             budgetEntity.userId,
-            budgetEntity.creationDate
+            budgetEntity.creationDate.toString()
         )
     }
 }

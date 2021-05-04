@@ -1,5 +1,6 @@
 package com.tattoomanager.tattooManager.adapter.persistence.entity
 
+import java.sql.Timestamp
 import javax.persistence.*
 
 @Entity
@@ -16,5 +17,5 @@ data class BudgetEntity(
     val phone: String="",
     val isNew: Boolean,
     val userAlias: String="",
-    val creationDate: String
+    val creationDate: Timestamp
 )
