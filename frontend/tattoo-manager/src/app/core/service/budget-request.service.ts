@@ -42,4 +42,11 @@ export class BudgetRequestService {
       })
       .pipe(catchError(this.errorHandler.handleError('getBudgetRequest', [])));
   }
+
+  setAsNotNew(budget: BudgetRequest): void {
+    this.http
+      .patch<BudgetRequest>(this.url + 'setAsNotNew/' + budget.id, null)
+      .pipe()
+      .subscribe();
+  }
 }

@@ -13,7 +13,7 @@ class CorsConfiguration {
             override fun addCorsMappings(registry: CorsRegistry) {
                 registry.addMapping("/**")
                     .allowedOrigins("*")
-                    .allowedMethods("POST", "GET", "DELETE")
+                    .allowedMethods("POST", "GET", "DELETE", "PATCH")
             }
         }
     }

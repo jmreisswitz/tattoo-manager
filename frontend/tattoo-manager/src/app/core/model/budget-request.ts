@@ -1,4 +1,5 @@
 export interface IBudgetRequest {
+  id: number;
   clientName: string;
   age: number;
   description: string;
@@ -11,6 +12,7 @@ export interface IBudgetRequest {
 }
 
 export class BudgetRequest implements IBudgetRequest {
+  id: number;
   clientName: string;
   age: number;
   description: string;
@@ -22,6 +24,7 @@ export class BudgetRequest implements IBudgetRequest {
   creationDate: string;
 
   constructor(
+    id: number,
     clientName: string,
     age: number,
     description: string,
@@ -32,6 +35,7 @@ export class BudgetRequest implements IBudgetRequest {
     creationDate: string,
     userAlias?: string | null
   ) {
+    this.id = id;
     this.clientName = clientName;
     this.age = age;
     this.description = description;

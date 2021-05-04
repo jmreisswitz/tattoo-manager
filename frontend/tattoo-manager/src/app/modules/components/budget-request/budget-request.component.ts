@@ -17,6 +17,7 @@ export class BudgetRequestComponent implements OnInit {
   userAlias: string | null = '';
 
   budgetRequest: BudgetRequest = new BudgetRequest(
+    0,
     '',
     0,
     '',
@@ -36,6 +37,7 @@ export class BudgetRequestComponent implements OnInit {
 
   cleanRequest(): void {
     this.budgetRequest = new BudgetRequest(
+      0,
       '',
       0,
       '',

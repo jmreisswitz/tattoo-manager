@@ -8,6 +8,13 @@
     <p>Telefone de contato: {{ budget.phone }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button color="primary">Marcar como lida</button>
+    <button
+      mat-button
+      color="primary"
+      (click)="setAsNotNew()"
+      [disabled]="!budget.isNew"
+    >
+      Marcar como lida
+    </button>
   </mat-card-actions>
 </mat-card>
