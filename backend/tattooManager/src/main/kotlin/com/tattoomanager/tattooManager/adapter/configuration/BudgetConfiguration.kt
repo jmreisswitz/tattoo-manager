@@ -5,6 +5,7 @@ import com.tattoomanager.tattooManager.adapter.persistence.repository.BudgetRepo
 import com.tattoomanager.tattooManager.port.repository.BudgetRepository
 import com.tattoomanager.tattooManager.usecases.budget.FindBudgetsByUserAlias
 import com.tattoomanager.tattooManager.usecases.budget.SaveBudget
+import com.tattoomanager.tattooManager.usecases.budget.SetAsNotNew
 import com.tattoomanager.tattooManager.usecases.user.FindUserByUserAlias
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -28,5 +29,10 @@ class BudgetConfiguration constructor(
     @Bean
     fun createSaveBudget(): SaveBudget {
         return SaveBudget(createBudgetRepository(), findUserByUserAlias)
+    }
+
+    @Bean
+    fun createSetAsNotNew(): SetAsNotNew {
+        return SetAsNotNew(createBudgetRepository())
     }
 }

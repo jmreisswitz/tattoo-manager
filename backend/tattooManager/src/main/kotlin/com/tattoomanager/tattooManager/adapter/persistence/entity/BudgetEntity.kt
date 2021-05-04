@@ -15,7 +15,7 @@ data class BudgetEntity(
     val bodyPart: String="",
     val sizeInCm: Float= 0.0F,
     val phone: String="",
-    val isNew: Boolean,
+    var isNew: Boolean,
     val userAlias: String="",
     val creationDate: Timestamp
 )

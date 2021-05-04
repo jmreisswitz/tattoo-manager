@@ -3,6 +3,7 @@ package com.tattoomanager.tattooManager.adapter.persistence.repository
 import com.tattoomanager.tattooManager.adapter.persistence.entity.BudgetEntity
 import com.tattoomanager.tattooManager.adapter.persistence.mapper.BudgetEntityMapper
 import com.tattoomanager.tattooManager.domain.Budget
+import com.tattoomanager.tattooManager.domain.exceptions.BudgetNotFoundException
 import com.tattoomanager.tattooManager.port.repository.BudgetRepository
 
 class BudgetRepositoryImpl constructor(
@@ -20,6 +21,12 @@ class BudgetRepositoryImpl constructor(
     }
 
     override fun findByUserIdOrderedByCreationDate(userId: Long): List<Budget> {
-        return mapEntityListToDomain(budgetPsqlRepository.findByUserIdOrderByCreationDate(userId))
+        return mapEntityListToDomain(budgetPsqlRepository.findByUserIdOrderByCreationDateDesc(userId))
+    }
+
+    override fun setAsNotNew(budgetId: Long): Budget {
+        val budgetEntity = this.budgetPsqlRepository.findById(budgetId).orElseThrow{ BudgetNotFoundException() }
+        budgetEntity.isNew = false
+        return modelMapper.mapToDomain(this.budgetPsqlRepository.save(budgetEntity))
     }
 }

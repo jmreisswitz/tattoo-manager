@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface BudgetPsqlRepository: CrudRepository<BudgetEntity, Long> {
     fun save(budget: BudgetEntity): BudgetEntity
-    fun findByUserIdOrderByCreationDate(userId: Long): List<BudgetEntity>
+    fun findByUserIdOrderByCreationDateDesc(userId: Long): List<BudgetEntity>
 }
