@@ -18,8 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
+import { BudgetCardComponent } from './modules/components/budget-card/budget-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatCardModule } from '@angular/material/card';
     CalendarDashboardComponent,
     DefaultDashboardComponent,
     BudgetRequestComponent,
+    BudgetCardComponent,
     BudgetDetailComponent,
   ],
   imports: [

@@ -1,3 +1,11 @@
-<div *ngFor="let budget of budgetList">
-  <app-budget-detail [budget]="budget"></app-budget-detail>
+<div class="budget-page-container">
+  <div class="budget-list">
+    <div *ngFor="let budget of budgetList">
+      <app-budget-card [budget]="budget"></app-budget-card>
+    </div>
+  </div>
+  <!--  <app-budget-detail-->
+  <!--    *ngIf="budgetList.length"-->
+  <!--    [budget]="selectedBudget"-->
+  <!--  ></app-budget-detail>-->
 </div>

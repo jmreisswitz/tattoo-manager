@@ -1,11 +1,11 @@
 .sidenav-container {
-  height: 1000px;
+  height: 800px;
 }
 .main-page-content {
-  display: flex;
+  display: inline-block;
   height: 100%;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: stretch;
 }
 .main-sidenav {
   user-select: none;
