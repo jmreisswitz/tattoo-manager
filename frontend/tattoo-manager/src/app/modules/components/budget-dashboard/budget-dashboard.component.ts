@@ -10,6 +10,7 @@ import { BudgetRequestService } from '../../../core/service/budget-request.servi
 export class BudgetDashboardComponent implements OnInit {
   budgetList: BudgetRequest[] = [];
   userAlias = '';
+  selectedBudget: BudgetRequest | null = null;
 
   constructor(private budgetRequestService: BudgetRequestService) {}
 
@@ -18,9 +19,18 @@ export class BudgetDashboardComponent implements OnInit {
     this.getBudgetList();
   }
 
+  setSelectedBudget(budget: BudgetRequest): void {
+    this.selectedBudget = budget;
+  }
+
   getBudgetList(): void {
     this.budgetRequestService
       .getBudgetRequests(this.userAlias)
-      .subscribe((budgetList) => (this.budgetList = budgetList));
+      .subscribe((budgetList) => {
+        this.budgetList = budgetList;
+        this.selectedBudget = this.budgetList.length
+          ? this.budgetList[0]
+          : null;
+      });
   }
 }

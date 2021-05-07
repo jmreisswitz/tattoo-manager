@@ -1,1 +1,9 @@
-<p>budget-detail works!</p>
+<div *ngIf="budget" class="budget-detail-container">
+  <h2>Nome: {{ budget.clientName }}</h2>
+  <p>Idade: {{ budget.age }}</p>
+  <p>Descrição: {{ budget.description }}</p>
+  <p>Parte do corpo: {{ budget.bodyPart }}</p>
+  <p>Tamanho (em cm): {{ budget.sizeInCm }}</p>
+  <p>Telefone de contato: {{ budget.phone }}</p>
+  <p>Data do pedido de orçamento: {{ budget.creationDate }}</p>
+</div>
