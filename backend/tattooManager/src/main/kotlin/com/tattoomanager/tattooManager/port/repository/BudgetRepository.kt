@@ -6,4 +6,5 @@ interface BudgetRepository {
     fun save(budget: Budget): Budget
     fun findByUserIdOrderedByCreationDate(userId: Long): List<Budget>
     fun setAsNotNew(budgetId: Long): Budget
+    fun getTotalNewBudgetsByUserId(userId: Long): Int
 }

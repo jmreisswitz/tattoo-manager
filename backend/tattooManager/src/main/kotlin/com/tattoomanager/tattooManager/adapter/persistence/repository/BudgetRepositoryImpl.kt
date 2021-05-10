@@ -29,4 +29,8 @@ class BudgetRepositoryImpl constructor(
         budgetEntity.isNew = false
         return modelMapper.mapToDomain(this.budgetPsqlRepository.save(budgetEntity))
     }
+
+    override fun getTotalNewBudgetsByUserId(userId: Long): Int {
+        return this.budgetPsqlRepository.countBudgetEntitiesByUserIdAndIsNewIsTrue(userId)
+    }
 }

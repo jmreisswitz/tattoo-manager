@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository
 interface BudgetPsqlRepository: CrudRepository<BudgetEntity, Long> {
     fun save(budget: BudgetEntity): BudgetEntity
     fun findByUserIdOrderByCreationDateDesc(userId: Long): List<BudgetEntity>
+    fun countBudgetEntitiesByUserIdAndIsNewIsTrue(userId: Long): Int
 }

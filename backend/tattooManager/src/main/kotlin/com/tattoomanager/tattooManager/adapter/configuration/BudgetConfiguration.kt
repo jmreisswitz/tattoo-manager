@@ -4,6 +4,7 @@ import com.tattoomanager.tattooManager.adapter.persistence.repository.BudgetPsql
 import com.tattoomanager.tattooManager.adapter.persistence.repository.BudgetRepositoryImpl
 import com.tattoomanager.tattooManager.port.repository.BudgetRepository
 import com.tattoomanager.tattooManager.usecases.budget.FindBudgetsByUserAlias
+import com.tattoomanager.tattooManager.usecases.budget.GetTotalNewBudgetRequestsByUserAlias
 import com.tattoomanager.tattooManager.usecases.budget.SaveBudget
 import com.tattoomanager.tattooManager.usecases.budget.SetAsNotNew
 import com.tattoomanager.tattooManager.usecases.user.FindUserByUserAlias
@@ -34,5 +35,10 @@ class BudgetConfiguration constructor(
     @Bean
     fun createSetAsNotNew(): SetAsNotNew {
         return SetAsNotNew(createBudgetRepository())
+    }
+
+    @Bean
+    fun createGetTotalNewBudgetByUserAlias(): GetTotalNewBudgetRequestsByUserAlias {
+        return GetTotalNewBudgetRequestsByUserAlias(createBudgetRepository(), findUserByUserAlias)
     }
 }

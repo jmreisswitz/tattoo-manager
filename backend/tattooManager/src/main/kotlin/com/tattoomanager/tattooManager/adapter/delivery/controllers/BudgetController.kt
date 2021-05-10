@@ -5,6 +5,7 @@ import com.tattoomanager.tattooManager.adapter.delivery.payload.BudgetPayload
 import com.tattoomanager.tattooManager.adapter.delivery.restmappers.BudgetRestMapper
 import com.tattoomanager.tattooManager.domain.exceptions.UserNotFoundException
 import com.tattoomanager.tattooManager.usecases.budget.FindBudgetsByUserAlias
+import com.tattoomanager.tattooManager.usecases.budget.GetTotalNewBudgetRequestsByUserAlias
 import com.tattoomanager.tattooManager.usecases.budget.SaveBudget
 import com.tattoomanager.tattooManager.usecases.budget.SetAsNotNew
 import org.springframework.web.bind.annotation.*
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.*
 class BudgetController constructor(
     val saveBudget: SaveBudget,
     val findBudgetsByUserAlias: FindBudgetsByUserAlias,
-    val setAsNotNew: SetAsNotNew
+    val setAsNotNew: SetAsNotNew,
+    val getTotalNewBudgetRequestsByUserAlias: GetTotalNewBudgetRequestsByUserAlias
     ) {
     private val modelMapper = BudgetRestMapper()
     private val logger = LoggerFactory.getLogger(javaClass)
@@ -39,5 +41,10 @@ class BudgetController constructor(
     @PatchMapping("setAsNotNew/{budgetId}")
     fun setAsNotNew(@PathVariable budgetId: String): BudgetPayload {
         return modelMapper.mapToPayload(setAsNotNew.execute(budgetId.toLong()))
+    }
+
+    @GetMapping("getNewBudget")
+    fun getTotalNewBudgetsByUserAlias(@RequestParam userAlias: String): Int {
+        return this.getTotalNewBudgetRequestsByUserAlias.execute(userAlias)
     }
 }
