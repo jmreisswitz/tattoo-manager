@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { BudgetRequestService } from '../../../core/service/budget-request.service';
 
 interface SideNavOption {
   icon: string;
   text: string;
   componentPath: string;
+  highlight: boolean;
 }
 
 @Component({
@@ -16,15 +18,30 @@ export class MainPageComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;
   isShowing = false;
+  userAlias: string | null = 'vale';
+  newBudgetRequestsCount: number | never[] = 0;
+
+  constructor(private budgeRequestService: BudgetRequestService) {}
 
   sideNavOptionList: SideNavOption[] = [
-    { icon: 'home', text: 'Página inicial', componentPath: '' },
+    {
+      icon: 'home',
+      text: 'Página inicial',
+      componentPath: '',
+      highlight: false,
+    },
     {
       icon: 'shopping_cart',
       text: 'Pedidos de orçamento',
       componentPath: 'budget',
+      highlight: false,
     },
-    { icon: 'calendar_today', text: 'Agenda', componentPath: 'calendar' },
+    {
+      icon: 'calendar_today',
+      text: 'Agenda',
+      componentPath: 'calendar',
+      highlight: false,
+    },
   ];
 
   mouseEnter(): void {
@@ -39,5 +56,24 @@ export class MainPageComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  setBudgetTextNotification(): void {
+    if (!this.newBudgetRequestsCount) {
+      return;
+    }
+    const budgetText = this.sideNavOptionList[1].text;
+    this.sideNavOptionList[1].text =
+      budgetText + ' (' + this.newBudgetRequestsCount + ')';
+    this.sideNavOptionList[1].highlight = true;
+  }
+
+  ngOnInit(): void {
+    if (this.userAlias) {
+      this.budgeRequestService
+        .getTotalOfNewBudgetRequests(this.userAlias)
+        .subscribe((totalNewBudgetRequests) => {
+          this.newBudgetRequestsCount = totalNewBudgetRequests;
+          this.setBudgetTextNotification();
+        });
+    }
+  }
 }

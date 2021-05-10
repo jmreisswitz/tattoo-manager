@@ -30,3 +30,7 @@
 .submenu.expanded {
   transform: scaleY(1);
 }
+
+.highlighted-option {
+  font-weight: bold;
+}

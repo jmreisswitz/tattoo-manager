@@ -43,6 +43,16 @@ export class BudgetRequestService {
       .pipe(catchError(this.errorHandler.handleError('getBudgetRequest', [])));
   }
 
+  getTotalOfNewBudgetRequests(
+    userAliasRequest: string
+  ): Observable<number | never[]> {
+    return this.http
+      .get<number>(this.url + 'getNewBudget', {
+        params: { userAlias: userAliasRequest },
+      })
+      .pipe(catchError(this.errorHandler.handleError('getBudgetRequest', [])));
+  }
+
   setAsNotNew(budget: BudgetRequest): void {
     this.http
       .patch<BudgetRequest>(this.url + 'setAsNotNew/' + budget.id, null)
