@@ -1,6 +1,10 @@
 <div class="budget-page-container">
   <div class="budget-list">
-    <div *ngFor="let budget of budgetList">
+    <div
+      *ngFor="let budget of budgetList"
+      (click)="setSelectedBudget(budget)"
+      class="budget-list-element"
+    >
       <app-budget-card [budget]="budget"></app-budget-card>
     </div>
   </div>
