@@ -1,10 +1,15 @@
-<mat-card *ngIf="budget" [ngClass]="{ 'new-budget-request': budget.isNew }">
-  <mat-card-title
+<mat-card
+  *ngIf="budget"
+  [ngClass]="{ 'new-budget-request': budget.isNew }"
+  class="budget-card"
+>
+  <mat-card-title class="budget-card-title"
     ><p *ngIf="budget.isNew" class="new-label">NOVO</p>
-    Nome do cliente: {{ budget.clientName }}</mat-card-title
+    {{ budget.clientName }}</mat-card-title
   >
   <mat-card-content>
-    <p>Descrição: {{ budget.description }}</p>
+    <p>Parte do corpo: {{ budget.bodyPart }}</p>
+    <p>Tamanho: {{ budget.sizeInCm }}</p>
     <p>Telefone de contato: {{ budget.phone }}</p>
   </mat-card-content>
   <mat-card-actions>

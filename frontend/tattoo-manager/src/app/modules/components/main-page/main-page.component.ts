@@ -15,7 +15,6 @@ interface SideNavOption {
 export class MainPageComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav | undefined;
   isExpanded = true;
-  showSubmenu = false;
   isShowing = false;
 
   sideNavOptionList: SideNavOption[] = [

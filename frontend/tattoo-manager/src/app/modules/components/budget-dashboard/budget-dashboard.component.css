@@ -1,5 +1,6 @@
 .budget-page-container{
   display: inline-flex;
+  width: 900px;
 }
 
 .budget-list {
