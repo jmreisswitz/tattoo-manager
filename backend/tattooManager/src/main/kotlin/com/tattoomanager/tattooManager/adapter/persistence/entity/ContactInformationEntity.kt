@@ -13,7 +13,7 @@ data class ContactInformationEntity (
     val cpf: String,
     val rg: String,
     val birthDate: String,
-    val cep: Float,
+    val cep: String,
     val phone: String,
     val userAlias: String,
     val email: String,
