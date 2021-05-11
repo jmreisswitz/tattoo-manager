@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BudgetCardComponent } from './modules/components/budget-card/budget-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
+import { AnamneseDashboardComponent } from './modules/components/anamnese-dashboard/anamnese-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BudgetDetailComponent } from './modules/components/budget-detail/budget
     BudgetRequestComponent,
     BudgetCardComponent,
     BudgetDetailComponent,
+    AnamneseDashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,6 +42,12 @@ export class MainPageComponent implements OnInit {
       componentPath: 'calendar',
       highlight: false,
     },
+    {
+      icon: 'description',
+      text: 'Anamnese',
+      componentPath: 'anamnese',
+      highlight: false,
+    },
   ];
 
   mouseEnter(): void {
@@ -57,7 +63,8 @@ export class MainPageComponent implements OnInit {
   }
 
   setBudgetTextNotification(): void {
-    if (!this.newBudgetRequestsCount) {
+    if (!this.newBudgetRequestsCount || this.newBudgetRequestsCount === 0) {
+      this.sideNavOptionList[1].highlight = false;
       return;
     }
     const budgetText = this.sideNavOptionList[1].text;
