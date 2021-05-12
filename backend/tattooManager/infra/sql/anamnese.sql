@@ -1,7 +1,6 @@
 
 CREATE TABLE contact_information(
     id serial primary key,
-    user_id integer,
     complete_name text,
     cpf text,
     rg text,
@@ -9,13 +8,11 @@ CREATE TABLE contact_information(
     cep text,
     phone text,
     user_alias text,
-    email text,
-    creation_date text
+    email text
 );
 
 CREATE TABLE clinical_information(
     id serial primary key,
-    user_id integer,
     cardiac_problem bool,    -- Problema cardíaco ou epilepsia
     easy_blooding bool,      -- Hemofilia, hemorragia, ou sangra facilmente
     immunologic_system bool, -- Alteração do sistema imunológico
@@ -29,6 +26,8 @@ CREATE TABLE clinical_information(
 
 CREATE TABLE anamnese(
     id serial primary key,
+    user_id integer,
+    creation_date text,
     contact_information_id integer references contact_information(id),
     clinical_information_id integer references clinical_information(id)
 )

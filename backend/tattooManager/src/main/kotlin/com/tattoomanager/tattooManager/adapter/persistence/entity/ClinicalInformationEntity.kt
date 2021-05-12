@@ -8,7 +8,6 @@ data class ClinicalInformationEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
-    val userId: Long?,
     val cardiacProblem: Boolean,
     val easyBlooding: Boolean,
     val immunologicSystem: Boolean,

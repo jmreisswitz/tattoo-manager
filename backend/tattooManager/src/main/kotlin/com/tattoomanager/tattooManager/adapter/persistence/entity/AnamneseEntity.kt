@@ -8,6 +8,8 @@ data class AnamneseEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
+    val userId: Long,
+    val creationDate: String,
     @OneToOne(fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
     @JoinColumn(name = "contact_information_id")
     val contactInformationEntity: ContactInformationEntity,

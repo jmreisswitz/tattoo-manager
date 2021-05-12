@@ -2,7 +2,6 @@ package com.tattoomanager.tattooManager.domain
 
 data class ClinicalInfo(
     val id: Long?,
-    val userId: Long?,
     val cardiacProblem: Boolean,
     val easyBlooding: Boolean,
     val immunologicSystem: Boolean,

@@ -11,9 +11,10 @@ class AnamneseEntityMapper {
     fun mapToEntity(anamnese: Anamnese): AnamneseEntity {
         return AnamneseEntity(
             null,
+            anamnese.userId,
+            anamnese.creationDate,
             ContactInformationEntity(
                 anamnese.contactInfo.id,
-                anamnese.contactInfo.userId,
                 anamnese.contactInfo.completeName,
                 anamnese.contactInfo.cpf,
                 anamnese.contactInfo.rg,
@@ -21,12 +22,10 @@ class AnamneseEntityMapper {
                 anamnese.contactInfo.cep,
                 anamnese.contactInfo.phone,
                 anamnese.contactInfo.userAlias,
-                anamnese.contactInfo.email,
-                anamnese.contactInfo.creationDate
+                anamnese.contactInfo.email
             ),
             ClinicalInformationEntity(
                 anamnese.clinicalInfo.id,
-                anamnese.clinicalInfo.userId,
                 anamnese.clinicalInfo.cardiacProblem,
                 anamnese.clinicalInfo.easyBlooding,
                 anamnese.clinicalInfo.immunologicSystem,
@@ -42,9 +41,10 @@ class AnamneseEntityMapper {
 
     fun mapToDomain(anamneseEntity: AnamneseEntity): Anamnese {
         return Anamnese(
+            anamneseEntity.userId,
+            anamneseEntity.creationDate,
             ContactInfo(
                 anamneseEntity.contactInformationEntity.id,
-                anamneseEntity.contactInformationEntity.userId,
                 anamneseEntity.contactInformationEntity.completeName,
                 anamneseEntity.contactInformationEntity.cpf,
                 anamneseEntity.contactInformationEntity.rg,
@@ -52,12 +52,10 @@ class AnamneseEntityMapper {
                 anamneseEntity.contactInformationEntity.cep,
                 anamneseEntity.contactInformationEntity.phone,
                 anamneseEntity.contactInformationEntity.userAlias,
-                anamneseEntity.contactInformationEntity.email,
-                anamneseEntity.contactInformationEntity.creationDate
+                anamneseEntity.contactInformationEntity.email
             ),
             ClinicalInfo(
                 anamneseEntity.clinicalInformationEntity.id,
-                anamneseEntity.clinicalInformationEntity.userId,
                 anamneseEntity.clinicalInformationEntity.cardiacProblem,
                 anamneseEntity.clinicalInformationEntity.easyBlooding,
                 anamneseEntity.clinicalInformationEntity.immunologicSystem,
