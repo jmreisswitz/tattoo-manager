@@ -27,8 +27,6 @@ export class BudgetRequestService {
   }
 
   sendBudgetRequest(request: BudgetRequest): void {
-    console.log('Sending to server on :', this.url);
-    console.log(request);
     this.http
       .post<BudgetRequest>(this.url, request)
       .pipe(catchError(this.errorHandler.handleError('sendBudgetRequest', [])))

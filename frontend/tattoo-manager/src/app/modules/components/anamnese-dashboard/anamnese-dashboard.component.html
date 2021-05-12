@@ -1,1 +1,14 @@
-<p>anamnese-dashboard works!</p>
+<mat-form-field>
+  <mat-label>Nome do cliente</mat-label>
+  <input
+    matInput
+    type="text"
+    id="searchBar"
+    name="searchBar"
+    required
+    [(ngModel)]="searchTerm"
+  />
+</mat-form-field>
+<div *ngFor="let anamnese of anamneses">
+  {{ anamnese }}
+</div>
