@@ -11,6 +11,7 @@ export class PdfGeneratorService {
   constructor() {}
 
   async generateAnamnesePdf(anamnese: Anamnese): Promise<any> {
+    const checkSign = 'X';
     const inputs = [
       {
         clientName: anamnese.contactInfo.completeName,
@@ -20,6 +21,24 @@ export class PdfGeneratorService {
         cep: anamnese.contactInfo.cep,
         phone: anamnese.contactInfo.phone,
         email: anamnese.contactInfo.email,
+        cardTrue: anamnese.clinicalInfo.cardiacProblem ? checkSign : '',
+        cardFalse: !anamnese.clinicalInfo.cardiacProblem ? checkSign : '',
+        bloodTrue: anamnese.clinicalInfo.easyBlooding ? checkSign : '',
+        bloodFalse: !anamnese.clinicalInfo.easyBlooding ? checkSign : '',
+        immunoTrue: anamnese.clinicalInfo.immunologicSystem ? checkSign : '',
+        immunoFalse: !anamnese.clinicalInfo.immunologicSystem ? checkSign : '',
+        diabetesTrue: anamnese.clinicalInfo.diabetes ? checkSign : '',
+        diabetesFalse: !anamnese.clinicalInfo.diabetes ? checkSign : '',
+        dstTrue: anamnese.clinicalInfo.dst ? checkSign : '',
+        dstFalse: !anamnese.clinicalInfo.dst ? checkSign : '',
+        pregnantTrue: anamnese.clinicalInfo.pregnant ? checkSign : '',
+        pregnantFalse: !anamnese.clinicalInfo.pregnant ? checkSign : '',
+        pressureTrue: anamnese.clinicalInfo.highPressure ? checkSign : '',
+        pressureFalse: !anamnese.clinicalInfo.highPressure ? checkSign : '',
+        faintTrue: anamnese.clinicalInfo.faintFrequently ? checkSign : '',
+        faintFalse: !anamnese.clinicalInfo.faintFrequently ? checkSign : '',
+        allergyTrue: anamnese.clinicalInfo.allergy ? checkSign : '',
+        allergyFalse: !anamnese.clinicalInfo.allergy ? checkSign : '',
       },
     ];
     const font = {};
