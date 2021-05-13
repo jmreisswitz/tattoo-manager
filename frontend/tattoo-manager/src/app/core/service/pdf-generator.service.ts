@@ -20,7 +20,10 @@ export class PdfGeneratorService {
     const font = {};
     const template = {
       schemas: templateJson.schemas.map((schemas: any) => {
-        return { schemas } as const;
+        for (const [key] of Object.entries(schemas)) {
+          schemas[key].type = 'text' as const;
+        }
+        return schemas;
       }),
       basePdf: templateJson.basePdf,
     };
