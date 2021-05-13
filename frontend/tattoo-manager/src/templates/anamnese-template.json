@@ -4,18 +4,68 @@
       "clientName": {
         "type": "text",
         "position": { "x": 54.13, "y": 132.45 },
-        "width": 46.54,
-        "height": 4.68,
+        "width": 51.3,
+        "height": 5.21,
         "alignment": "left",
         "fontSize": 11,
         "characterSpacing": 0,
         "lineHeight": 1
       },
-      "field2": {
+      "cpf": {
         "type": "text",
         "position": { "x": 35.71, "y": 137.85 },
-        "width": 64.89,
-        "height": 4.09,
+        "width": 69.39,
+        "height": 4.35,
+        "alignment": "left",
+        "fontSize": 11,
+        "characterSpacing": 0,
+        "lineHeight": 1
+      },
+      "rg": {
+        "type": "text",
+        "position": { "x": 32.54, "y": 143.14 },
+        "width": 72.56,
+        "height": 4.91,
+        "alignment": "left",
+        "fontSize": 11,
+        "characterSpacing": 0,
+        "lineHeight": 1
+      },
+      "birthDate": {
+        "type": "text",
+        "position": { "x": 60.32, "y": 148.17 },
+        "width": 43.47,
+        "height": 4.62,
+        "alignment": "left",
+        "fontSize": 11,
+        "characterSpacing": 0,
+        "lineHeight": 1
+      },
+      "cep": {
+        "type": "text",
+        "position": { "x": 35.45, "y": 153.19 },
+        "width": 23.36,
+        "height": 5.94,
+        "alignment": "left",
+        "fontSize": 11,
+        "characterSpacing": 0,
+        "lineHeight": 1
+      },
+      "phone": {
+        "type": "text",
+        "position": { "x": 41.53, "y": 159.55 },
+        "width": 63.05,
+        "height": 4.35,
+        "alignment": "left",
+        "fontSize": 11,
+        "characterSpacing": 0,
+        "lineHeight": 1
+      },
+      "email": {
+        "type": "text",
+        "position": { "x": 38.36, "y": 164.57 },
+        "width": 67.28,
+        "height": 5.15,
         "alignment": "left",
         "fontSize": 11,
         "characterSpacing": 0,

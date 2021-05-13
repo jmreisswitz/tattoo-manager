@@ -15,6 +15,11 @@ export class PdfGeneratorService {
       {
         clientName: anamnese.contactInfo.completeName,
         cpf: anamnese.contactInfo.cpf,
+        rg: anamnese.contactInfo.rg,
+        birthDate: anamnese.contactInfo.birthDate,
+        cep: anamnese.contactInfo.cep,
+        phone: anamnese.contactInfo.phone,
+        email: anamnese.contactInfo.email,
       },
     ];
     const font = {};
