@@ -22,6 +22,7 @@ import { BudgetCardComponent } from './modules/components/budget-card/budget-car
 import { MatCardModule } from '@angular/material/card';
 import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
 import { AnamneseDashboardComponent } from './modules/components/anamnese-dashboard/anamnese-dashboard.component';
+import { SafePipe } from './core/pipe/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AnamneseDashboardComponent } from './modules/components/anamnese-dashbo
     BudgetCardComponent,
     BudgetDetailComponent,
     AnamneseDashboardComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

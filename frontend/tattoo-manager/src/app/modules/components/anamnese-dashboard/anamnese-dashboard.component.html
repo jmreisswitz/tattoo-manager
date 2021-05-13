@@ -10,5 +10,19 @@
   />
 </mat-form-field>
 <div *ngFor="let anamnese of anamneses">
-  {{ anamnese }}
+  <div
+    *ngIf="searchTerm && anamnese.contactInfo.completeName.includes(searchTerm)"
+  >
+    {{ anamnese.contactInfo.completeName }}
+    <button (click)="downloadPdf(anamnese)">
+      <mat-icon>download</mat-icon>
+    </button>
+  </div>
 </div>
+<iframe
+  title="anamnese-pdf"
+  id="iframe"
+  width="100%"
+  height="900"
+  [src]="iframeSrc | safe"
+></iframe>
