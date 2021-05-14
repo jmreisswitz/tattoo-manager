@@ -3,3 +3,9 @@
   padding-right: 0;
   min-width: 44px;
 }
+
+.new-anamnese-button {
+  position: absolute;
+  bottom: 7%;
+  right: 5%;
+}
