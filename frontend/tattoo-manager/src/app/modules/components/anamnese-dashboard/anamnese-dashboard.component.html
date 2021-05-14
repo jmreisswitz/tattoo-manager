@@ -13,10 +13,15 @@
   <div
     *ngIf="searchTerm && anamnese.contactInfo.completeName.includes(searchTerm)"
   >
-    {{ anamnese.contactInfo.completeName }}
-    <button (click)="downloadPdf(anamnese)">
+    <button
+      (click)="downloadPdf(anamnese)"
+      mat-stroked-button
+      color="primary"
+      class="download-button"
+    >
       <mat-icon>download</mat-icon>
     </button>
+    {{ anamnese.contactInfo.completeName }}
   </div>
 </div>
 <iframe
