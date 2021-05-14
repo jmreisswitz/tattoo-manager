@@ -14,7 +14,7 @@
     *ngIf="searchTerm && anamnese.contactInfo.completeName.includes(searchTerm)"
   >
     <button
-      (click)="downloadPdf(anamnese)"
+      (click)="openPdfDialog(anamnese)"
       mat-stroked-button
       color="primary"
       class="download-button"
@@ -24,10 +24,3 @@
     {{ anamnese.contactInfo.completeName }}
   </div>
 </div>
-<iframe
-  title="anamnese-pdf"
-  id="iframe"
-  width="100%"
-  height="900"
-  [src]="iframeSrc | safe"
-></iframe>

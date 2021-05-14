@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Anamnese } from '../../../core/model/anamnese';
 import { AnamneseService } from '../../../core/service/anamnese.service';
 import { PdfGeneratorService } from '../../../core/service/pdf-generator.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AnamnesePdfDialogComponent } from '../anamnese-pdf-dialog/anamnese-pdf-dialog.component';
 
 @Component({
   selector: 'app-anamnese-dashboard',
@@ -15,7 +17,8 @@ export class AnamneseDashboardComponent implements OnInit {
 
   constructor(
     private anamneseService: AnamneseService,
-    private pdfGeneratorService: PdfGeneratorService
+    private pdfGeneratorService: PdfGeneratorService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -24,10 +27,12 @@ export class AnamneseDashboardComponent implements OnInit {
       .subscribe((anamneses) => (this.anamneses = anamneses));
   }
 
-  downloadPdf(anamnese: Anamnese): void {
+  openPdfDialog(anamnese: Anamnese): void {
     this.pdfGeneratorService.generateAnamnesePdf(anamnese).then((blob) => {
-      console.log('chegou os guri');
-      this.iframeSrc = URL.createObjectURL(blob);
+      this.dialog.open(AnamnesePdfDialogComponent, {
+        width: '100%',
+        data: URL.createObjectURL(blob),
+      });
     });
   }
 }

@@ -23,6 +23,8 @@ import { MatCardModule } from '@angular/material/card';
 import { BudgetDetailComponent } from './modules/components/budget-detail/budget-detail.component';
 import { AnamneseDashboardComponent } from './modules/components/anamnese-dashboard/anamnese-dashboard.component';
 import { SafePipe } from './core/pipe/safe.pipe';
+import { AnamnesePdfDialogComponent } from './modules/components/anamnese-pdf-dialog/anamnese-pdf-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,12 +38,14 @@ import { SafePipe } from './core/pipe/safe.pipe';
     BudgetDetailComponent,
     AnamneseDashboardComponent,
     SafePipe,
+    AnamnesePdfDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatDialogModule,
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
