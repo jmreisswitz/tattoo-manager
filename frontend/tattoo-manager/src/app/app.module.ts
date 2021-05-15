@@ -25,6 +25,8 @@ import { AnamneseDashboardComponent } from './modules/components/anamnese-dashbo
 import { SafePipe } from './core/pipe/safe.pipe';
 import { AnamnesePdfDialogComponent } from './modules/components/anamnese-pdf-dialog/anamnese-pdf-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NewAnamneseComponent } from './modules/components/new-anamnese/new-anamnese.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -39,12 +41,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     AnamneseDashboardComponent,
     SafePipe,
     AnamnesePdfDialogComponent,
+    NewAnamneseComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatCheckboxModule,
     MatDialogModule,
     MatSidenavModule,
     MatIconModule,

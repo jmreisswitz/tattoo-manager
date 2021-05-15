@@ -1,0 +1,149 @@
+<div>
+  <h2>Bem vindo!</h2>
+  <form>
+    <!--    COMPLETE NAME-->
+    <section>
+      <mat-form-field>
+        <mat-label>Nome Completo</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="completeName"
+          name="completeName"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--    CPF-->
+    <section>
+      <mat-form-field>
+        <mat-label>cpf</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="cpf"
+          name="cpf"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--    RG-->
+    <section>
+      <mat-form-field>
+        <mat-label>RG</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="rg"
+          name="rg"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--    BIRTH DATE-->
+    <section>
+      <mat-form-field>
+        <mat-label>Data de Nascimento</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="dateBirth"
+          name="dateBirth"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--    CEP-->
+    <section>
+      <mat-form-field>
+        <mat-label>CEP</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="cep"
+          name="cep"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--phone text,-->
+    <section>
+      <mat-form-field>
+        <mat-label>Telefone de contato</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="phone"
+          name="phone"
+          placeholder="(51) 99999-9999"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--email text-->
+    <section>
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          id="mail"
+          name="mail"
+          required
+        />
+      </mat-form-field>
+    </section>
+    <!--diac_problem bool,    &#45;&#45; Problema cardíaco ou epilepsia-->
+    <section>
+      <mat-checkbox color="primary"
+        >Problema cardíaco ou epilepsia</mat-checkbox
+      >
+    </section>
+    <!--easy_blooding bool,      &#45;&#45; Hemofilia, hemorragia, ou sangra facilmente-->
+    <section>
+      <mat-checkbox color="primary"
+        >Hemofilia, hemorragia, ou sangra facilmente</mat-checkbox
+      >
+    </section>
+    <!--immunologic_system bool, &#45;&#45; Alteração do sistema imunológico-->
+    <section>
+      <mat-checkbox color="primary"
+        >Alteração do sistema imunológico</mat-checkbox
+      >
+    </section>
+    <!--diabetes bool,           &#45;&#45; Diabetes-->
+    <section>
+      <mat-checkbox color="primary">Diabetes</mat-checkbox>
+    </section>
+    <!--dst bool,                &#45;&#45; Hepatite ou DST-->
+    <section>
+      <mat-checkbox color="primary">Hepatite ou DST</mat-checkbox>
+    </section>
+    <!--pregnant bool,           &#45;&#45; Grávida ou amamentando-->
+    <section>
+      <mat-checkbox color="primary">Grávida ou amamentando</mat-checkbox>
+    </section>
+    <!--high_pressure bool,      &#45;&#45; Pressão alta-->
+    <section>
+      <mat-checkbox color="primary">Pressão alta</mat-checkbox>
+    </section>
+    <!--faint_frequently bool,   &#45;&#45; Desmaios e quedas de pressão frequentes-->
+    <section>
+      <mat-checkbox color="primary"
+        >Desmaios e quedas de pressão frequentes</mat-checkbox
+      >
+    </section>
+    <!--allergy bool             &#45;&#45; Alergia a algum material?-->
+    <section>
+      <mat-checkbox color="primary">Alergia a algum material?</mat-checkbox>
+    </section>
+  </form>
+  <button mat-raised-button color="primary">Gerar anamnese</button>
+</div>
