@@ -4,7 +4,7 @@ import { ErrorHandlingService } from './error-handling.service';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Anamnese } from '../model/anamnese';
+import { IAnamnese } from '../model/anamnese';
 
 @Injectable({
   providedIn: 'root',
@@ -26,9 +26,9 @@ export class AnamneseService {
       '/';
   }
 
-  getAllAnamneses(): Observable<Anamnese[]> {
+  getAllAnamneses(): Observable<IAnamnese[]> {
     return this.http
-      .get<Anamnese[]>(this.url)
+      .get<IAnamnese[]>(this.url)
       .pipe(catchError(this.errorHandler.handleError('getAllAnamneses', [])));
   }
 }

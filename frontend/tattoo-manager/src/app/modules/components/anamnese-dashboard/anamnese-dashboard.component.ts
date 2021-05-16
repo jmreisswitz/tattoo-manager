@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Anamnese } from '../../../core/model/anamnese';
+import { IAnamnese } from '../../../core/model/anamnese';
 import { AnamneseService } from '../../../core/service/anamnese.service';
 import { PdfGeneratorService } from '../../../core/service/pdf-generator.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import { AnamnesePdfDialogComponent } from '../anamnese-pdf-dialog/anamnese-pdf-
 })
 export class AnamneseDashboardComponent implements OnInit {
   searchTerm = '';
-  anamneses: Anamnese[] = [];
+  anamneses: IAnamnese[] = [];
   iframeSrc: any = 'about:blank';
 
   constructor(
@@ -27,7 +27,7 @@ export class AnamneseDashboardComponent implements OnInit {
       .subscribe((anamneses) => (this.anamneses = anamneses));
   }
 
-  openPdfDialog(anamnese: Anamnese): void {
+  openPdfDialog(anamnese: IAnamnese): void {
     this.pdfGeneratorService.generateAnamnesePdf(anamnese).then((blob) => {
       this.dialog.open(AnamnesePdfDialogComponent, {
         width: '100%',

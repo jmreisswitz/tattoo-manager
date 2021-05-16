@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Anamnese } from '../model/anamnese';
+import { IAnamnese } from '../model/anamnese';
 import labelmake from 'labelmake';
 // @ts-ignore
 import templateJson from '../../../templates/anamnese-template.json';
@@ -10,7 +10,7 @@ import templateJson from '../../../templates/anamnese-template.json';
 export class PdfGeneratorService {
   constructor() {}
 
-  async generateAnamnesePdf(anamnese: Anamnese): Promise<any> {
+  async generateAnamnesePdf(anamnese: IAnamnese): Promise<any> {
     const checkSign = 'X';
     const inputs = [
       {
