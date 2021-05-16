@@ -9,7 +9,10 @@ data class FinanceReleaseEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long?,
+    val userId: Long,
     val releaseDate: Date,
-    val value: Double,
-    val type: String
+    val value: Float,
+    val description: String,
+    val type: String,
+    val group: String
 )
