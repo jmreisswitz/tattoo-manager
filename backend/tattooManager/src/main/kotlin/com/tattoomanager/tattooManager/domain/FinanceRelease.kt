@@ -6,20 +6,20 @@ import java.util.*
 
 interface FinanceRelease {
     val userId: Long?
-    val date: Date
+    val releaseDate: Date
     val value: Double
 }
 
 data class ProfitRelease (
     val type: ProfitType,
     override val userId: Long?,
-    override val date: Date,
+    override val releaseDate: Date,
     override val value: Double
 ): FinanceRelease
 
 data class ExpenseRelease(
     val type: ExpenseType,
     override val userId: Long?,
-    override val date: Date,
+    override val releaseDate: Date,
     override val value: Double
 ): FinanceRelease
