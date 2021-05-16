@@ -31,4 +31,13 @@ export class AnamneseService {
       .get<IAnamnese[]>(this.url)
       .pipe(catchError(this.errorHandler.handleError('getAllAnamneses', [])));
   }
+
+  createAnamnese(anamnese: IAnamnese, userAliasRequest: string): void {
+    this.http
+      .post<IAnamnese>(this.url, {
+        params: { userAlias: userAliasRequest },
+      })
+      .pipe(catchError(this.errorHandler.handleError('createAnamnese', [])))
+      .subscribe();
+  }
 }

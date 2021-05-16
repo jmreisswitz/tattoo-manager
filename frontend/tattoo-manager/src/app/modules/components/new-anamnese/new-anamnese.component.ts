@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Anamnese } from '../../../core/model/anamnese';
+import { AnamnesePdfDialogComponent } from '../anamnese-pdf-dialog/anamnese-pdf-dialog.component';
+import { PdfGeneratorService } from '../../../core/service/pdf-generator.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AnamneseService } from '../../../core/service/anamnese.service';
 
 @Component({
   selector: 'app-new-anamnese',
@@ -9,12 +13,29 @@ import { Anamnese } from '../../../core/model/anamnese';
 export class NewAnamneseComponent implements OnInit {
   anamnese: Anamnese = Anamnese.getEmptyAnamnese();
 
-  constructor() {}
+  constructor(
+    private pdfGeneratorService: PdfGeneratorService,
+    private anamneseService: AnamneseService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {}
 
   generateAnamnese(): void {
-    console.log(this.anamnese);
-    console.log(this.anamnese.clinicalInfo.cardiacProblem);
+    this.openPdfDialog();
+    this.createOnRepository();
+  }
+
+  private createOnRepository(): void {
+    this.anamneseService.createAnamnese(this.anamnese, '');
+  }
+
+  private openPdfDialog(): void {
+    this.pdfGeneratorService.generateAnamnesePdf(this.anamnese).then((blob) => {
+      this.dialog.open(AnamnesePdfDialogComponent, {
+        width: '100%',
+        data: URL.createObjectURL(blob),
+      });
+    });
   }
 }
