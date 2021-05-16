@@ -51,7 +51,6 @@ export class PdfGeneratorService {
       }),
       basePdf: templateJson.basePdf,
     };
-    console.log(template);
     const pdf = await labelmake({ inputs, template, font });
     return new Blob([pdf.buffer], { type: 'application/pdf' });
   }

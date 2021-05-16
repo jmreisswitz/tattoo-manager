@@ -34,7 +34,7 @@ export class AnamneseService {
 
   createAnamnese(anamnese: IAnamnese, userAliasRequest: string): void {
     this.http
-      .post<IAnamnese>(this.url, {
+      .post<IAnamnese>(this.url, anamnese, {
         params: { userAlias: userAliasRequest },
       })
       .pipe(catchError(this.errorHandler.handleError('createAnamnese', [])))
