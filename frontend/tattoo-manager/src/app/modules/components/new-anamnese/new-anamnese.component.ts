@@ -28,7 +28,7 @@ export class NewAnamneseComponent implements OnInit {
 
   private createOnRepository(): void {
     this.anamnese.setCreationAsNow();
-    this.anamneseService.createAnamnese(this.anamnese, '');
+    this.anamneseService.createAnamnese(this.anamnese, 'vale');
   }
 
   private openPdfDialog(): void {

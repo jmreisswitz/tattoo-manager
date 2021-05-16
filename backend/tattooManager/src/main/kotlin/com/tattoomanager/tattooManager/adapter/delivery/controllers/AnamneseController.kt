@@ -1,14 +1,15 @@
 package com.tattoomanager.tattooManager.adapter.delivery.controllers
 
-import com.tattoomanager.tattooManager.adapter.persistence.entity.AnamneseEntity
 import com.tattoomanager.tattooManager.domain.Anamnese
 import com.tattoomanager.tattooManager.port.repository.AnamneseRepository
+import com.tattoomanager.tattooManager.usecases.anamnese.SaveAnamnese
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("anamnese")
 class AnamneseController constructor(
-    private val anamneseRepository: AnamneseRepository
+    private val anamneseRepository: AnamneseRepository,
+    private val saveAnamnese: SaveAnamnese
 ){
     @GetMapping
     fun getAll(): Collection<Anamnese> {
@@ -16,7 +17,9 @@ class AnamneseController constructor(
     }
 
     @PostMapping
-    fun save(@RequestBody anamneseEntity: Anamnese): Anamnese {
-        return this.anamneseRepository.save(anamneseEntity)
+    fun save(
+        @RequestBody anamneseEntity: Anamnese,
+        @RequestParam userAlias: String): Anamnese {
+        return this.saveAnamnese.execute(anamneseEntity, userAlias)
     }
 }
