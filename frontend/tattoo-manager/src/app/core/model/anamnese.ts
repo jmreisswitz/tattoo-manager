@@ -102,4 +102,12 @@ export class Anamnese implements IAnamnese {
       ''
     );
   }
+
+  setCreationAsNow(): void {
+    const dateAsString = new Date().toJSON().replace('T', ' ');
+    this.creationDate = dateAsString.substring(
+      0,
+      dateAsString.length - '.xxxZ'.length
+    );
+  }
 }

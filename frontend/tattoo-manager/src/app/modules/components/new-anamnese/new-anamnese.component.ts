@@ -27,6 +27,7 @@ export class NewAnamneseComponent implements OnInit {
   }
 
   private createOnRepository(): void {
+    this.anamnese.setCreationAsNow();
     this.anamneseService.createAnamnese(this.anamnese, '');
   }
 
