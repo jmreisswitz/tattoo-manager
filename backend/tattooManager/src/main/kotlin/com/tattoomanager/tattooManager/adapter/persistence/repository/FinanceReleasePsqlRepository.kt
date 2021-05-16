@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface FinanceReleasePsqlRepository: CrudRepository<FinanceReleaseEntity, Long> {
     fun save(financeReleaseEntity: FinanceReleaseEntity): FinanceReleaseEntity
-    fun getAllByUserId(userId: String): Collection<FinanceReleaseEntity>
+    fun getAllByUserId(userId: Long): Collection<FinanceReleaseEntity>
 }
