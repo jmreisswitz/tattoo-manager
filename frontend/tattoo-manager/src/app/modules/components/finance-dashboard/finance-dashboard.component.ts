@@ -55,9 +55,7 @@ export class FinanceDashboardComponent implements OnInit {
   }
 
   openNewFinanceDialog(): void {
-    this.dialog.open(NewFinanceReleaseComponent, {
-      width: '100%',
-    });
+    this.dialog.open(NewFinanceReleaseComponent);
   }
 
   fetchFinanceReleases(): void {

@@ -18,3 +18,9 @@ table {
 .negative-number {
   color: red;
 }
+
+.new-finance-button {
+  position: absolute;
+  bottom: 1%;
+  right: 22%;
+}
