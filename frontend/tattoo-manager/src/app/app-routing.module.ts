@@ -6,6 +6,7 @@ import { BudgetDashboardComponent } from './modules/components/budget-dashboard/
 import { BudgetRequestComponent } from './modules/components/budget-request/budget-request.component';
 import { AnamneseDashboardComponent } from './modules/components/anamnese-dashboard/anamnese-dashboard.component';
 import { NewAnamneseComponent } from './modules/components/new-anamnese/new-anamnese.component';
+import { FinanceDashboardComponent } from './modules/components/finance-dashboard/finance-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: DefaultDashboardComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'anamnese', component: AnamneseDashboardComponent },
   { path: 'budget-request/:userid', component: BudgetRequestComponent },
   { path: 'anamnese-new/:userid', component: NewAnamneseComponent },
+  { path: 'finance', component: FinanceDashboardComponent },
 ];
 
 @NgModule({

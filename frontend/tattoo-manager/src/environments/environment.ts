@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backend: {
-    url: 'http://localhost',
+    url: 'http://10.0.0.105',
     port: 8080,
   },
 };

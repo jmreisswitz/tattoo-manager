@@ -27,6 +27,7 @@ import { AnamnesePdfDialogComponent } from './modules/components/anamnese-pdf-di
 import { MatDialogModule } from '@angular/material/dialog';
 import { NewAnamneseComponent } from './modules/components/new-anamnese/new-anamnese.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FinanceDashboardComponent } from './modules/components/finance-dashboard/finance-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     SafePipe,
     AnamnesePdfDialogComponent,
     NewAnamneseComponent,
+    FinanceDashboardComponent,
   ],
   imports: [
     BrowserModule,

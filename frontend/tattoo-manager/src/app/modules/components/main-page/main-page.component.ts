@@ -48,6 +48,12 @@ export class MainPageComponent implements OnInit {
       componentPath: 'anamnese',
       highlight: false,
     },
+    {
+      icon: 'price_change',
+      text: 'Financeiro',
+      componentPath: 'finance',
+      highlight: false,
+    },
   ];
 
   mouseEnter(): void {
