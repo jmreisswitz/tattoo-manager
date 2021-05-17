@@ -14,5 +14,6 @@ data class FinanceReleaseEntity (
     val value: Float,
     val description: String,
     val type: String,
+    @Column(name="release_group")  // group is kind of a reserved word on psql
     val group: String
 )

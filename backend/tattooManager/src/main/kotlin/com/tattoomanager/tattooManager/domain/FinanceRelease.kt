@@ -6,10 +6,10 @@ import java.util.*
 
 data class FinanceRelease (
     val id: Long?,
-    var userId: Long?,
-    val releaseDate: Date,
-    val value: Float,
-    val description: String,
-    val type: FinanceReleaseType,
-    val group: FinanceReleaseGroup
+        var userId: Long?,
+        val releaseDate: Date,
+        val value: Float,
+        val description: String,
+        val type: FinanceReleaseType,
+        val group: FinanceReleaseGroup
 )

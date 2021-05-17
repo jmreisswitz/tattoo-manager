@@ -22,7 +22,7 @@ class FinanceReleaseConfiguration constructor(
 
     @Bean
     fun saveFinanceReleaseUseCase(): SaveFinanceRelease {
-        return SaveFinanceRelease(createFinanceReleaseRepository())
+        return SaveFinanceRelease(createFinanceReleaseRepository(), findUserByUserAlias)
     }
 
     @Bean
