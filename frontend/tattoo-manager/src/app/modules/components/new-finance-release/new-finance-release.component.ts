@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FinanceRelease } from '../../../core/model/finance-release';
 // import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -41,5 +42,22 @@ export class NewFinanceReleaseComponent implements OnInit {
     this.groupSelected = releaseGroup;
   }
 
-  saveFinanceRelease(): void {}
+  saveFinanceRelease(): void {
+    if (
+      this.description &&
+      this.value &&
+      this.groupSelected &&
+      this.typeSelected
+    ) {
+      const release: FinanceRelease = {
+        value: this.value,
+        description: this.description,
+        type: this.typeSelected,
+        group: this.groupSelected,
+      };
+      console.log(release);
+    }
+  }
+
+  closeDialog(): void {}
 }
