@@ -25,6 +25,7 @@ export class NewFinanceReleaseComponent implements OnInit {
   groupSelected: string | null = null;
   description: string | null = null;
   value: number | null = null;
+  selectedDate: Date = new Date();
 
   constructor() {}
   ngOnInit(): void {}
@@ -36,6 +37,7 @@ export class NewFinanceReleaseComponent implements OnInit {
     } else {
       this.releaseGroups = this.revenueGroups;
     }
+    this.groupSelected = null;
   }
 
   changeGroup(releaseGroup: string): void {
@@ -50,6 +52,7 @@ export class NewFinanceReleaseComponent implements OnInit {
       this.typeSelected
     ) {
       const release: FinanceRelease = {
+        releaseDate: this.selectedDate,
         value: this.value,
         description: this.description,
         type: this.typeSelected,

@@ -30,6 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FinanceDashboardComponent } from './modules/components/finance-dashboard/finance-dashboard.component';
 import { NewFinanceReleaseComponent } from './modules/components/new-finance-release/new-finance-release.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserAnimationsModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDatepickerModule,
     MatDialogModule,
+    MatNativeDateModule,
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,

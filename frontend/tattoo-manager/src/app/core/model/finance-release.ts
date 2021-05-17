@@ -1,5 +1,5 @@
 export interface FinanceRelease {
-  // releaseDate: Date;
+  releaseDate: Date;
   value: number;
   description: string;
   type: string;
