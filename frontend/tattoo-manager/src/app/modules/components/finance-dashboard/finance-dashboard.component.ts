@@ -46,11 +46,11 @@ export class FinanceDashboardComponent implements OnInit {
     this.balance.revenue = this.filteredReleasesList
       .filter((it) => it.value > 0)
       .map((it) => it.value)
-      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber);
+      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber, 0);
     this.balance.expenses = this.filteredReleasesList
       .filter((it) => it.value < 0)
       .map((it) => it.value)
-      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber);
+      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber, 0);
     this.balance.total = this.balance.revenue + this.balance.expenses;
   }
 
