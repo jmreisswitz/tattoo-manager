@@ -8,6 +8,7 @@ import {
   FinanceType,
 } from '../model/finance-release';
 import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -101,5 +102,13 @@ export class FinanceReleaseService {
       )
       .pipe(catchError(this.errorHandler.handleError('sendFinanceRelease', [])))
       .subscribe();
+  }
+
+  getAllByUserAlias(userAliasRequest: string): Observable<FinanceRelease[]> {
+    return this.http
+      .get<FinanceRelease[]>(this.url + '/getByUserAlias', {
+        params: { userAlias: userAliasRequest },
+      })
+      .pipe(catchError(this.errorHandler.handleError('getAllByUserAlias', [])));
   }
 }

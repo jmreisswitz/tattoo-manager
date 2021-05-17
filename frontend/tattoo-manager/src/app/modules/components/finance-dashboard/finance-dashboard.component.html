@@ -1,4 +1,6 @@
-<p>finance-dashboard works!</p>
+<div *ngFor="let financeRelease of financeReleaseList">
+  <p>{{ financeRelease.description }}</p>
+</div>
 <button
   mat-fab
   color="primary"
