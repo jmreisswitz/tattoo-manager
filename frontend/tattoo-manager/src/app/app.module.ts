@@ -32,6 +32,9 @@ import { NewFinanceReleaseComponent } from './modules/components/new-finance-rel
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -61,14 +64,17 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatSidenavModule,
     MatIconModule,
+    MatTableModule,
     MatToolbarModule,
     MatMenuModule,
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSortModule,
     FormsModule,
     MatButtonModule,
     HttpClientModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

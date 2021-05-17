@@ -10,6 +10,7 @@ import { FinanceReleaseService } from '../../../core/service/finance-release.ser
   styleUrls: ['./finance-dashboard.component.css'],
 })
 export class FinanceDashboardComponent implements OnInit {
+  displayedColumns: string[] = ['Data', 'Tipo', 'Grupo', 'Valor', 'Descrição'];
   financeReleaseList: FinanceRelease[] = [];
 
   constructor(
