@@ -27,7 +27,7 @@ export class MainPageComponent implements OnInit {
     {
       icon: 'home',
       text: 'Página inicial',
-      componentPath: '',
+      componentPath: '/',
       highlight: false,
     },
     {

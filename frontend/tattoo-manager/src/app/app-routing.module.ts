@@ -7,15 +7,23 @@ import { BudgetRequestComponent } from './modules/components/budget-request/budg
 import { AnamneseDashboardComponent } from './modules/components/anamnese-dashboard/anamnese-dashboard.component';
 import { NewAnamneseComponent } from './modules/components/new-anamnese/new-anamnese.component';
 import { FinanceDashboardComponent } from './modules/components/finance-dashboard/finance-dashboard.component';
+import { MainPageComponent } from './modules/components/main-page/main-page.component';
 
 const routes: Routes = [
-  { path: '', component: DefaultDashboardComponent },
-  { path: 'calendar', component: CalendarDashboardComponent },
-  { path: 'budget', component: BudgetDashboardComponent },
-  { path: 'anamnese', component: AnamneseDashboardComponent },
+  {
+    path: 'app',
+    component: MainPageComponent,
+    children: [
+      { path: '', component: DefaultDashboardComponent },
+      { path: 'calendar', component: CalendarDashboardComponent },
+      { path: 'budget', component: BudgetDashboardComponent },
+      { path: 'anamnese', component: AnamneseDashboardComponent },
+      { path: 'finance', component: FinanceDashboardComponent },
+    ],
+  },
+  { path: '', redirectTo: '/app', pathMatch: 'full' },
   { path: 'budget-request/:userid', component: BudgetRequestComponent },
   { path: 'anamnese-new/:userid', component: NewAnamneseComponent },
-  { path: 'finance', component: FinanceDashboardComponent },
 ];
 
 @NgModule({
