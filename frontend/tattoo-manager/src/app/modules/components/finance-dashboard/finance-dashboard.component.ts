@@ -4,6 +4,12 @@ import { NewFinanceReleaseComponent } from '../new-finance-release/new-finance-r
 import { FinanceRelease } from '../../../core/model/finance-release';
 import { FinanceReleaseService } from '../../../core/service/finance-release.service';
 
+interface Balance {
+  revenue: number;
+  expenses: number;
+  total: number;
+}
+
 @Component({
   selector: 'app-finance-dashboard',
   templateUrl: './finance-dashboard.component.html',
@@ -21,6 +27,11 @@ export class FinanceDashboardComponent implements OnInit {
   filteredReleasesList: FinanceRelease[] = [];
   dateFrom: Date | null = null;
   dateUntil: Date | null = null;
+  balance: Balance = {
+    revenue: 0,
+    expenses: 0,
+    total: 0,
+  };
 
   constructor(
     private dialog: MatDialog,
@@ -29,6 +40,18 @@ export class FinanceDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchFinanceReleases();
+  }
+
+  updateBalance(): void {
+    this.balance.revenue = this.filteredReleasesList
+      .filter((it) => it.value > 0)
+      .map((it) => it.value)
+      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber);
+    this.balance.expenses = this.filteredReleasesList
+      .filter((it) => it.value < 0)
+      .map((it) => it.value)
+      .reduce((firstNumber, secondNumber) => firstNumber + secondNumber);
+    this.balance.total = this.balance.revenue + this.balance.expenses;
   }
 
   openNewFinanceDialog(): void {
@@ -46,6 +69,7 @@ export class FinanceDashboardComponent implements OnInit {
           this.financeReleaseService.enumStringToString(it)
         );
         this.filteredReleasesList = financeReleaseList;
+        this.updateBalance();
       });
   }
 
@@ -60,6 +84,7 @@ export class FinanceDashboardComponent implements OnInit {
           // @ts-ignore
           release.releaseDate <= this.dateUntil?.toJSON()
       );
+      this.updateBalance();
     }
   }
 }

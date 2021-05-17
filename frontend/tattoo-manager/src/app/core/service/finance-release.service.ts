@@ -86,6 +86,9 @@ export class FinanceReleaseService {
   private prepareFinanceReleaseObject(
     financeRelease: FinanceRelease
   ): FinanceRelease {
+    if (financeRelease.type === FinanceType.EXPENSE) {
+      financeRelease.value = financeRelease.value * -1;
+    }
     switch (financeRelease.type) {
       case FinanceType.EXPENSE: {
         financeRelease.type = 'EXPENSE';

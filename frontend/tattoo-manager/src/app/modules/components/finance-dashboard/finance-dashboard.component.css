@@ -1,3 +1,20 @@
 table {
   width: 100%;
 }
+
+.balance-container{
+  display: flex;
+  text-align: center;
+}
+
+.balance-card{
+  width: 200px;
+}
+
+.positive-number {
+  color: green;
+}
+
+.negative-number {
+  color: red;
+}

@@ -17,6 +17,31 @@
   Filtrar
 </button>
 
+<div class="balance-container">
+  <mat-card class="balance-card">
+    <mat-card-title>Receitas</mat-card-title>
+    <mat-card-content class="positive-number"
+      >R$ {{ balance.revenue }}</mat-card-content
+    >
+  </mat-card>
+  <mat-card class="balance-card">
+    <mat-card-title>Despesas</mat-card-title>
+    <mat-card-content class="negative-number"
+      >R$ {{ balance.expenses }}</mat-card-content
+    >
+  </mat-card>
+  <mat-card class="balance-card">
+    <mat-card-title>Total</mat-card-title>
+    <mat-card-content
+      [ngClass]="{
+        'positive-number': balance.total > 0,
+        'negative-number': balance.total < 0
+      }"
+      >R$ {{ balance.total }}</mat-card-content
+    >
+  </mat-card>
+</div>
+
 <!--TABLE-->
 <table mat-table [dataSource]="filteredReleasesList" matSort>
   <!--  displayedColumns: string[] = ['Data', 'Tipo', 'Grupo', 'Valor', 'Descrição'];-->
