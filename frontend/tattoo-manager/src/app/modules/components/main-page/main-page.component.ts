@@ -36,12 +36,12 @@ export class MainPageComponent implements OnInit {
       componentPath: 'budget',
       highlight: false,
     },
-    {
-      icon: 'calendar_today',
-      text: 'Agenda',
-      componentPath: 'calendar',
-      highlight: false,
-    },
+    // {
+    //   icon: 'calendar_today',
+    //   text: 'Agenda',
+    //   componentPath: 'calendar',
+    //   highlight: false,
+    // },
     {
       icon: 'description',
       text: 'Anamnese',

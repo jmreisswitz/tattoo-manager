@@ -28,6 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NewAnamneseComponent } from './modules/components/new-anamnese/new-anamnese.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FinanceDashboardComponent } from './modules/components/finance-dashboard/finance-dashboard.component';
+import { NewFinanceReleaseComponent } from './modules/components/new-finance-release/new-finance-release.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { FinanceDashboardComponent } from './modules/components/finance-dashboar
     AnamnesePdfDialogComponent,
     NewAnamneseComponent,
     FinanceDashboardComponent,
+    NewFinanceReleaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { FinanceDashboardComponent } from './modules/components/finance-dashboar
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
+    MatMenuModule,
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
