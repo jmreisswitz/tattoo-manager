@@ -1,4 +1,24 @@
-<table mat-table [dataSource]="financeReleaseList" matSort>
+<!--DATE FILTER-->
+<mat-form-field>
+  <mat-label>Filtro de data</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="A partir de" [(ngModel)]="dateFrom" />
+    <input matEndDate placeholder="até" [(ngModel)]="dateUntil" />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+<button
+  mat-button
+  color="primary"
+  [disabled]="!dateFrom || !dateUntil"
+  (click)="filterReleases()"
+>
+  Filtrar
+</button>
+
+<!--TABLE-->
+<table mat-table [dataSource]="filteredReleasesList" matSort>
   <!--  displayedColumns: string[] = ['Data', 'Tipo', 'Grupo', 'Valor', 'Descrição'];-->
   <!--  DATE COLUMN-->
   <ng-container matColumnDef="releaseDate">

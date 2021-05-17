@@ -18,6 +18,9 @@ export class FinanceDashboardComponent implements OnInit {
     'description',
   ];
   financeReleaseList: FinanceRelease[] = [];
+  filteredReleasesList: FinanceRelease[] = [];
+  dateFrom: Date | null = null;
+  dateUntil: Date | null = null;
 
   constructor(
     private dialog: MatDialog,
@@ -42,6 +45,21 @@ export class FinanceDashboardComponent implements OnInit {
         this.financeReleaseList.forEach((it) =>
           this.financeReleaseService.enumStringToString(it)
         );
+        this.filteredReleasesList = financeReleaseList;
       });
+  }
+
+  filterReleases(): void {
+    if (!(this.dateUntil && this.dateFrom)) {
+      return;
+    } else {
+      this.filteredReleasesList = this.financeReleaseList.filter(
+        (release) =>
+          // @ts-ignore
+          release.releaseDate >= this.dateFrom?.toJSON() &&
+          // @ts-ignore
+          release.releaseDate <= this.dateUntil?.toJSON()
+      );
+    }
   }
 }
