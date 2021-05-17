@@ -14,9 +14,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FinanceReleaseService {
-  private url: string;
-  private serverRoute = 'financeRelease';
-
   constructor(
     private http: HttpClient,
     private errorHandler: ErrorHandlingService
@@ -28,6 +25,62 @@ export class FinanceReleaseService {
       '/' +
       this.serverRoute +
       '/';
+  }
+  private url: string;
+  private serverRoute = 'financeRelease';
+
+  enumStringToString(financeRelease: FinanceRelease): FinanceRelease {
+    switch (financeRelease.type) {
+      case 'EXPENSE': {
+        financeRelease.type = FinanceType.EXPENSE;
+        break;
+      }
+      case 'PROFIT': {
+        financeRelease.type = FinanceType.PROFIT;
+        break;
+      }
+    }
+
+    switch (financeRelease.group) {
+      case 'INFRASTRUCTURE': {
+        financeRelease.group = FinanceGroup.INFRASTRUCTURE;
+        break;
+      }
+      case 'COURSE': {
+        financeRelease.group = FinanceGroup.COURSE;
+        break;
+      }
+      case 'CONSULTANCY': {
+        financeRelease.group = FinanceGroup.CONSULTANCY;
+        break;
+      }
+      case 'DRAWING': {
+        financeRelease.group = FinanceGroup.DRAWING;
+        break;
+      }
+      case 'MARKETING': {
+        financeRelease.group = FinanceGroup.MARKETING;
+        break;
+      }
+      case 'MATERIAL': {
+        financeRelease.group = FinanceGroup.MATERIAL;
+        break;
+      }
+      case 'PERSONAL_DEVELOPMENT': {
+        financeRelease.group = FinanceGroup.PERSONAL_DEVELOPMENT;
+        break;
+      }
+      case 'TATTOO_JOB': {
+        financeRelease.group = FinanceGroup.TATTOO_JOB;
+        break;
+      }
+      case 'SOFTWARE': {
+        financeRelease.group = FinanceGroup.SOFTWARE;
+        break;
+      }
+    }
+
+    return financeRelease;
   }
 
   private prepareFinanceReleaseObject(

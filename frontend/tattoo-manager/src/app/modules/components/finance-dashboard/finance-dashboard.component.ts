@@ -10,7 +10,13 @@ import { FinanceReleaseService } from '../../../core/service/finance-release.ser
   styleUrls: ['./finance-dashboard.component.css'],
 })
 export class FinanceDashboardComponent implements OnInit {
-  displayedColumns: string[] = ['Data', 'Tipo', 'Grupo', 'Valor', 'Descrição'];
+  displayedColumns: string[] = [
+    'releaseDate',
+    'type',
+    'group',
+    'value',
+    'description',
+  ];
   financeReleaseList: FinanceRelease[] = [];
 
   constructor(
@@ -31,8 +37,11 @@ export class FinanceDashboardComponent implements OnInit {
   fetchFinanceReleases(): void {
     this.financeReleaseService
       .getAllByUserAlias('vale')
-      .subscribe(
-        (financeReleaseList) => (this.financeReleaseList = financeReleaseList)
-      );
+      .subscribe((financeReleaseList) => {
+        this.financeReleaseList = financeReleaseList;
+        this.financeReleaseList.forEach((it) =>
+          this.financeReleaseService.enumStringToString(it)
+        );
+      });
   }
 }
