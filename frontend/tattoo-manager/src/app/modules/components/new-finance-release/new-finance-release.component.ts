@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FinanceRelease } from '../../../core/model/finance-release';
-// import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import {
+  FinanceGroup,
+  FinanceRelease,
+  FinanceType,
+} from '../../../core/model/finance-release';
+import { FinanceReleaseService } from '../../../core/service/finance-release.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-finance-release',
@@ -8,30 +13,38 @@ import { FinanceRelease } from '../../../core/model/finance-release';
   styleUrls: ['./new-finance-release.component.css'],
 })
 export class NewFinanceReleaseComponent implements OnInit {
-  // constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(
+    public dialogRef: MatDialogRef<NewFinanceReleaseComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private financeReleaseService: FinanceReleaseService
+  ) {}
   expensesGroups = [
-    'Infraestrutura',
-    'Material',
-    'Marketing',
-    'Softwares',
-    'Desenvolvimento pessoal',
+    FinanceGroup.INFRASTRUCTURE,
+    FinanceGroup.MATERIAL,
+    FinanceGroup.MARKETING,
+    FinanceGroup.SOFTWARE,
+    FinanceGroup.PERSONAL_DEVELOPMENT,
   ];
-  revenueGroups = ['Tatuagem', 'Venda de desenhos', 'Cursos', 'Consultoria'];
+  revenueGroups = [
+    FinanceGroup.TATTOO_JOB,
+    FinanceGroup.DRAWING,
+    FinanceGroup.COURSE,
+    FinanceGroup.CONSULTANCY,
+  ];
   releaseGroups = this.expensesGroups;
 
-  releaseTypes = ['Despesa', 'Receita'];
+  releaseTypes = [FinanceType.EXPENSE, FinanceType.PROFIT];
 
-  typeSelected: string | null = null;
-  groupSelected: string | null = null;
+  typeSelected: FinanceType | null = null;
+  groupSelected: FinanceGroup | null = null;
   description: string | null = null;
   value: number | null = null;
   selectedDate: Date = new Date();
 
-  constructor() {}
   ngOnInit(): void {}
 
   changeType(releaseType: string): void {
-    this.typeSelected = releaseType;
+    this.typeSelected = releaseType as FinanceType;
     if (this.typeSelected === 'Despesa') {
       this.releaseGroups = this.expensesGroups;
     } else {
@@ -41,7 +54,7 @@ export class NewFinanceReleaseComponent implements OnInit {
   }
 
   changeGroup(releaseGroup: string): void {
-    this.groupSelected = releaseGroup;
+    this.groupSelected = releaseGroup as FinanceGroup;
   }
 
   saveFinanceRelease(): void {
@@ -58,9 +71,12 @@ export class NewFinanceReleaseComponent implements OnInit {
         type: this.typeSelected,
         group: this.groupSelected,
       };
-      console.log(release);
+      this.financeReleaseService.sendFinanceRelease(release, 'vale');
     }
+    this.closeDialog();
   }
 
-  closeDialog(): void {}
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }
